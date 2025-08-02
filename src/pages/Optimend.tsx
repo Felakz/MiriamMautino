@@ -66,7 +66,7 @@ export default function Optimend() {
             >
              <div className="w-80 h-80 mx-auto bg-gradient-to-br from-purple-100 to-pink-100 rounded-full flex items-center justify-center mb-8 shadow-2xl">
   <img 
-    src="/src/assets/productos/OPTIMEND.png" 
+    src="/OPTIMEND.png" 
     alt="OPTIMEND"
     className="w-64 h-64 object-contain"
     onError={(e) => {

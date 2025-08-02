@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaWhatsapp, FaStar } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
@@ -49,7 +48,7 @@ const Airo = () => {
             >
              <div className="w-80 h-80 mx-auto bg-gradient-to-br from-yellow-100 to-orange-100 rounded-full flex items-center justify-center mb-8 shadow-2xl">
   <img 
-    src="/src/assets/productos/AIRO.png" 
+    src="/AIRO.png" 
     alt="AIRO"
     className="w-64 h-64 object-contain"
     onError={(e) => {

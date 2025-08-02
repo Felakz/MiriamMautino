@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaWhatsapp, FaStar } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
@@ -49,7 +48,7 @@ const Nitrox = () => {
             >
              <div className="w-80 h-80 mx-auto bg-gradient-to-br from-red-100 to-rose-100 rounded-full flex items-center justify-center mb-8 shadow-2xl">
   <img 
-    src="/src/assets/productos/NITROX.png" 
+    src="/NITROX.png" 
     alt="NITROX"
     className="w-64 h-64 object-contain"
     onError={(e) => {

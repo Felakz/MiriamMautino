@@ -71,7 +71,7 @@ export default function GNMX() {
             >
               <div className="w-80 h-80 mx-auto bg-gradient-to-br from-green-100 to-emerald-100 rounded-full flex items-center justify-center mb-8 shadow-2xl">
                 <img 
-                  src="/src/assets/productos/GNM-X.png" 
+                  src="/GNM-X.png" 
                   alt="GNM-X"
                   className="w-64 h-64 object-contain"
                   onError={(e) => {
