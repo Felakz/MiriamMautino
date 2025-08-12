@@ -146,8 +146,8 @@ export default function Contacto() {
               {
                 name: "Facebook",
                 icon: <FaFacebook size={48} />,
-                color: "text-blue-600 hover:text-blue-700",
-                bgColor: "hover:bg-blue-50",
+                color: "text-purple-600 hover:text-purple-700",
+                bgColor: "hover:bg-purple-50",
                 url: "https://web.facebook.com/EpigeneticaSaludNatural",
                 description: "Únete a nuestra comunidad"
               },

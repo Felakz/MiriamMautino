@@ -113,7 +113,7 @@ export default function Navbar() {
                     <NavLink
                       key={prod.name}
                       to={prod.path}
-                      className="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors duration-200"
+                      className="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 transition-colors duration-200"
                       onClick={closeAllMenus}
                     >
                       {prod.icon}
@@ -122,7 +122,7 @@ export default function Navbar() {
                   ))}
                   <NavLink
                     to="/productos"
-                    className="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors duration-200 border-t border-gray-100 mt-2"
+                    className="flex items-center gap-3 px-4 py-3 hover:bg-purple-50 transition-colors duration-200 border-t border-gray-100 mt-2"
                     onClick={closeAllMenus}
                   >
                     <span className="font-medium text-blue-600">Ver Todos los Productos</span>
@@ -158,7 +158,7 @@ export default function Navbar() {
                     <NavLink
                       key={link.name}
                       to={link.path}
-                      className="block px-4 py-3 hover:bg-blue-50 transition-colors duration-200 font-medium"
+                      className="block px-4 py-3 hover:bg-purple-50 transition-colors duration-200 font-medium"
                       onClick={closeAllMenus}
                     >
                       {link.name}

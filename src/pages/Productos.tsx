@@ -201,7 +201,7 @@ export default function Productos() {
 									onClick={() => setCurrentProduct(index)}
 									className={`w-3 h-3 rounded-full transition-colors duration-300 ${
 										index === currentProduct
-											? "bg-blue-600"
+											? "bg-purple-600"
 											: "bg-gray-300"
 									}`}
 								/>

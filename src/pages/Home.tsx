@@ -105,7 +105,7 @@ export default function Home() {
 	return (
 		<div className="min-h-screen">
 			{/* Hero Section */}
-			<section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
+			<section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 via-white to-pink-50 overflow-hidden">
 				<div className="absolute inset-0 bg-gradient-to-r from-purple-600/5 to-pink-600/5"></div>
 				
 				{/* Floating Background Elements */}
@@ -119,7 +119,7 @@ export default function Home() {
 						repeat: Infinity,
 						ease: "easeInOut",
 					}}
-					className="absolute top-1/4 left-10 w-20 h-20 bg-blue-200 rounded-full opacity-20"
+					className="absolute top-1/4 left-10 w-20 h-20 bg-purple-200 rounded-full opacity-20"
 				/>
 				<motion.div
 					animate={{
@@ -275,7 +275,7 @@ export default function Home() {
 			</section>
 
 			{/* Testimonials Section */}
-			<section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+			<section className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
 				<div className="max-w-6xl mx-auto px-4">
 					<motion.div
 						initial={{ opacity: 0, y: 30 }}
