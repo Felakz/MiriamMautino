@@ -210,7 +210,7 @@ export default function Emprendimiento() {
       </section>
 
       {/* Footer */}
-      <SocialLinks />
+      <SocialLinks gradientColors="from-purple-500 to-pink-600" />
     </div>
   );
 }

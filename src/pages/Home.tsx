@@ -106,7 +106,7 @@ export default function Home() {
 		<div className="min-h-screen">
 			{/* Hero Section */}
 			<section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
-				<div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-purple-600/5"></div>
+				<div className="absolute inset-0 bg-gradient-to-r from-purple-600/5 to-pink-600/5"></div>
 				
 				{/* Floating Background Elements */}
 				<motion.div
@@ -160,7 +160,7 @@ export default function Home() {
 								transition={{ duration: 0.8, delay: 0.4 }}
 								className="font-bold mb-6 leading-tight text-[clamp(2.2rem,6vw,4.2rem)]"
 							>
-								<span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">Recupera tu energía, fortalece tu salud</span> <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">y transforma tu vida</span>
+								<span className="bg-gradient-to-r from-purple-600 via-pink-500 to-purple-800 bg-clip-text text-transparent">Recupera tu energía, fortalece tu salud</span> <span className="bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">y transforma tu vida</span>
 							</motion.h1>
 
 							<motion.p
@@ -182,11 +182,11 @@ export default function Home() {
 							>
 								<button
 									onClick={handleWhatsAppContact}
-									className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
+									className="bg-purple-500 hover:bg-purple-600 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
 								>
 									<FaWhatsapp /> Empezar mi cambio
 								</button>
-								<button className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300">
+								<button className="border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300">
 									Ver productos
 								</button>
 							</motion.div>
@@ -304,7 +304,7 @@ export default function Home() {
 										"{testimonials[currentTestimonial].text}"
 									</blockquote>
 									<div className="flex items-center justify-center gap-4">
-										<div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+										<div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
 											{testimonials[currentTestimonial].author.charAt(0)}
 										</div>
 										<div className="text-left">
@@ -395,7 +395,7 @@ export default function Home() {
 			</section>
 
 			{/* Footer */}
-			<SocialLinks />
+			<SocialLinks gradientColors="from-purple-500 to-pink-600" />
 
 		</div>
 	);

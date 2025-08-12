@@ -253,7 +253,7 @@ export default function Cookies() {
       </section>
 
       {/* Footer */}
-      <SocialLinks />
+      <SocialLinks gradientColors="from-purple-500 to-pink-600" />
     </div>
   );
 }

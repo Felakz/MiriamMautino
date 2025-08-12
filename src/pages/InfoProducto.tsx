@@ -184,7 +184,7 @@ export default function InfoProducto() {
       </section>
 
       {/* Footer */}
-      <SocialLinks gradientColors="from-blue-500 to-cyan-600" />
+      <SocialLinks gradientColors="from-purple-500 to-pink-600" />
     </div>
   );
 }
