@@ -306,7 +306,7 @@ ${formData.mensaje || "Sin mensaje adicional"}
       </div>
 
       {/* Footer */}
-      <SocialLinks />
+      <SocialLinks gradientColors="from-orange-500 to-red-600" />
     </div>
   );
 }
