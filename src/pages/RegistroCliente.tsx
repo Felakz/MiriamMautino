@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaWhatsapp, FaUser, FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import SocialLinks from "../components/SocialLinks";
 
 export default function RegistroCliente() {
   const [formData, setFormData] = useState({
@@ -38,7 +39,7 @@ ${formData.mensaje || "Sin mensaje adicional"}
 ¡Gracias por registrarte! Me pondré en contacto contigo pronto.
     `.trim();
 
-    const url = `https://wa.me/51999999999?text=${encodeURIComponent(whatsappMessage)}`;
+    const url = `https://wa.me/51900653836?text=${encodeURIComponent(whatsappMessage)}`;
     window.open(url, "_blank");
   };
 
@@ -230,6 +231,9 @@ ${formData.mensaje || "Sin mensaje adicional"}
           </div>
         </motion.div>
       </div>
+
+      {/* Footer */}
+      <SocialLinks />
     </div>
   );
 }

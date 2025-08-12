@@ -1,10 +1,11 @@
 import { FaWhatsapp, FaStar } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import SocialLinks from "../components/SocialLinks";
 
 const Nitrox = () => {
   const handleWhatsAppOrder = () => {
     const message = "Hola, estoy interesado/a en el producto Nitrox. ¿Podrían brindarme más información sobre precios y disponibilidad?";
-    const url = `https://wa.me/51926206841?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/51900653836?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   };
 
@@ -31,7 +32,7 @@ const Nitrox = () => {
                 ))}
                 <span className="text-gray-600 ml-2">(4.7/5 - 1,876 reseñas)</span>
               </div>
-              <div className="text-4xl font-bold text-red-500 mb-8">S/. 599</div>
+              <div className="text-4xl font-bold text-red-500 mb-8">S/. 280</div>
               <button 
                 onClick={handleWhatsAppOrder}
                 className="bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2 text-lg"
@@ -97,6 +98,13 @@ const Nitrox = () => {
           </div>
         </div>
       </section>
+      
+      {/* Footer */}
+      <SocialLinks 
+        gradientColors="from-red-500 to-red-600"
+        inputBgColor="bg-red-700"
+        buttonTextColor="text-red-600"
+      />
     </div>
   );
 };

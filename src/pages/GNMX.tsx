@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import { FaWhatsapp, FaCheckCircle, FaStar } from "react-icons/fa";
+import SocialLinks from "../components/SocialLinks";
 
 export default function GNMX() {
   const handleWhatsAppOrder = () => {
     const message = "Hola, estoy interesado/a en el producto GNM-X. ¿Podrían brindarme más información sobre precios y disponibilidad?";
-    const url = `https://wa.me/51999999999?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/51900653836?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   };
 
@@ -54,7 +55,7 @@ export default function GNMX() {
                 ))}
                 <span className="text-gray-600 ml-2">(4.8/5 - 1,952 reseñas)</span>
               </div>
-              <div className="text-4xl font-bold text-green-600 mb-8">S/. 349</div>
+              <div className="text-4xl font-bold text-green-600 mb-8">S/. 270</div>
               <button 
                 onClick={handleWhatsAppOrder}
                 className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2 text-lg"
@@ -151,31 +152,13 @@ export default function GNMX() {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-green-600 to-emerald-600 text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Lleva tu Rendimiento al Siguiente Nivel
-            </h2>
-            <p className="text-xl mb-8 opacity-90">
-              Únete a los atletas y profesionales que confían en GNM-X para alcanzar la excelencia
-            </p>
-            <button 
-              onClick={handleWhatsAppOrder}
-              className="bg-white text-green-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2 mx-auto"
-            >
-              <FaWhatsapp /> Ordenar Ahora - S/. 349
-            </button>
-          </motion.div>
-        </div>
-      </section>
+      
+      {/* Footer */}
+      <SocialLinks 
+        gradientColors="from-green-500 to-green-600"
+        inputBgColor="bg-green-700"
+        buttonTextColor="text-green-600"
+      />
     </div>
   );
 }

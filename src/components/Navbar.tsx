@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 
@@ -26,17 +26,51 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [prodOpen, setProdOpen] = useState(false);
   const [regOpen, setRegOpen] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
+
+  // Función para cerrar todos los menús
+  const closeAllMenus = () => {
+    setProdOpen(false);
+    setRegOpen(false);
+  };
+
+  // Manejar clics fuera del navbar para cerrar menús
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        closeAllMenus();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  // Función para abrir menú de productos (cierra el de registro)
+  const handleProductsToggle = () => {
+    setRegOpen(false);
+    setProdOpen(!prodOpen);
+  };
+
+  // Función para abrir menú de registro (cierra el de productos)
+  const handleRegistroToggle = () => {
+    setProdOpen(false);
+    setRegOpen(!regOpen);
+  };
 
   return (
     <motion.nav 
+      ref={navRef}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-lg border-b border-gray-100"
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-4">
-        <Link to="/" className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-          MICROEMPRESA
+        <Link to="/" className="text-xl font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
+          MM Bienestar & Emprendimiento
         </Link>
         
         {/* Desktop Menu */}
@@ -56,9 +90,12 @@ export default function Navbar() {
           {/* Productos Dropdown */}
           <div className="relative">
             <button
-              onClick={() => setProdOpen(!prodOpen)}
+              onClick={handleProductsToggle}
               className="navbar-link flex items-center gap-1"
-              onMouseEnter={() => setProdOpen(true)}
+              onMouseEnter={() => {
+                setRegOpen(false);
+                setProdOpen(true);
+              }}
             >
               Productos <FaChevronDown className={`text-xs transition-transform ${prodOpen ? 'rotate-180' : ''}`} />
             </button>
@@ -77,7 +114,7 @@ export default function Navbar() {
                       key={prod.name}
                       to={prod.path}
                       className="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors duration-200"
-                      onClick={() => setProdOpen(false)}
+                      onClick={closeAllMenus}
                     >
                       {prod.icon}
                       <span className="font-medium">{prod.name}</span>
@@ -86,7 +123,7 @@ export default function Navbar() {
                   <NavLink
                     to="/productos"
                     className="flex items-center gap-3 px-4 py-3 hover:bg-blue-50 transition-colors duration-200 border-t border-gray-100 mt-2"
-                    onClick={() => setProdOpen(false)}
+                    onClick={closeAllMenus}
                   >
                     <span className="font-medium text-blue-600">Ver Todos los Productos</span>
                   </NavLink>
@@ -98,9 +135,12 @@ export default function Navbar() {
           {/* Registro Dropdown */}
           <div className="relative">
             <button
-              onClick={() => setRegOpen(!regOpen)}
+              onClick={handleRegistroToggle}
               className="navbar-link flex items-center gap-1"
-              onMouseEnter={() => setRegOpen(true)}
+              onMouseEnter={() => {
+                setProdOpen(false);
+                setRegOpen(true);
+              }}
             >
               Registro <FaChevronDown className={`text-xs transition-transform ${regOpen ? 'rotate-180' : ''}`} />
             </button>
@@ -119,7 +159,7 @@ export default function Navbar() {
                       key={link.name}
                       to={link.path}
                       className="block px-4 py-3 hover:bg-blue-50 transition-colors duration-200 font-medium"
-                      onClick={() => setRegOpen(false)}
+                      onClick={closeAllMenus}
                     >
                       {link.name}
                     </NavLink>

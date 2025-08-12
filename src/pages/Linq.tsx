@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import { FaWhatsapp, FaCheckCircle, FaStar } from "react-icons/fa";
+import SocialLinks from "../components/SocialLinks";
 
 export default function Linq() {
   const handleWhatsAppOrder = () => {
     const message = "Hola, estoy interesado/a en el producto Linq. ¿Podrían brindarme más información sobre precios y disponibilidad?";
-    const url = `https://wa.me/51999999999?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/51900653836?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   };
 
@@ -49,7 +50,7 @@ export default function Linq() {
                 ))}
                 <span className="text-gray-600 ml-2">(4.9/5 - 2,847 reseñas)</span>
               </div>
-              <div className="text-4xl font-bold text-yellow-600 mb-8">S/. 299</div>
+              <div className="text-4xl font-bold text-yellow-600 mb-8">S/. 300</div>
               <button 
                 onClick={handleWhatsAppOrder}
                 className="btn-primary flex items-center gap-2 text-lg px-8 py-4 bg-yellow-500 hover:bg-yellow-600 text-white"
@@ -64,7 +65,7 @@ export default function Linq() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-center"
             >
-              <div className="w-80 h-80 mx-auto bg-gradient-to-br from-blue-100 to-cyan-100 rounded-full flex items-center justify-center mb-8 shadow-2xl">
+              <div className="w-80 h-80 mx-auto bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-full flex items-center justify-center mb-8 shadow-2xl">
                 <img 
                   src="/LINQ.png" 
                   alt="LINQ"
@@ -77,7 +78,7 @@ export default function Linq() {
                     }
                   }}
                 />
-                <div className="hidden w-64 h-64 bg-gradient-to-br from-yellow-200 to-yellow-200 rounded-lg items-center justify-center">
+                <div className="hidden w-64 h-64 bg-gradient-to-br from-yellow-200 to-yellow-300 rounded-lg items-center justify-center">
                   <span className="text-6xl font-bold text-blue-600">L</span>
                 </div>
               </div>
@@ -111,9 +112,9 @@ export default function Linq() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="flex items-center gap-3 p-4 bg-blue-50 rounded-lg"
+                className="flex items-center gap-3 p-4 bg-yellow-50 rounded-lg"
               >
-                <FaCheckCircle className="text-green-500 text-xl flex-shrink-0" />
+                <FaCheckCircle className="text-yellow-500 text-xl flex-shrink-0" />
                 <span className="text-gray-700">{benefit}</span>
               </motion.div>
             ))}
@@ -151,31 +152,13 @@ export default function Linq() {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-cyan-600 text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              ¿Listo para Experimentar Linq?
-            </h2>
-            <p className="text-xl mb-8 opacity-90">
-              Únete a miles de personas que ya han transformado su bienestar con Linq
-            </p>
-            <button 
-              onClick={handleWhatsAppOrder}
-              className="bg-white text-blue-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2 mx-auto"
-            >
-              <FaWhatsapp /> Ordenar Ahora - S/. 299
-            </button>
-          </motion.div>
-        </div>
-      </section>
+      
+      {/* Footer */}
+      <SocialLinks 
+        gradientColors="from-yellow-500 to-yellow-600"
+        inputBgColor="bg-yellow-700"
+        buttonTextColor="text-yellow-600"
+      />
     </div>
   );
 }

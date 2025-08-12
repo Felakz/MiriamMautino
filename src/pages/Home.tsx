@@ -1,24 +1,48 @@
-import { motion } from "framer-motion";
-import { FaRocket, FaHeart, FaShieldAlt, FaWhatsapp, FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaWhatsapp, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useState, useEffect } from "react";
+import SocialLinks from "../components/SocialLinks";
 
 const features = [
 	{
-		icon: <FaRocket className="text-4xl text-blue-500" />,
+		emoji: "🚀",
 		title: "Innovación",
 		description:
-			"Productos desarrollados con la más alta tecnología y investigación científica.",
+			"Productos desarrollados con la más alta tecnología y investigación científica que marcan la diferencia.",
 	},
 	{
-		icon: <FaHeart className="text-4xl text-red-500" />,
-		title: "Bienestar",
+		emoji: "💪",
+		title: "Bienestar Real",
 		description:
-			"Enfocados en mejorar tu salud y calidad de vida de manera natural.",
+			"Resultados tangibles que transforman tu vida. No promesas vacías, solo cambios reales y duraderos.",
 	},
 	{
-		icon: <FaShieldAlt className="text-4xl text-green-500" />,
-		title: "Calidad",
-		description: "Certificados y avalados por los más altos estándares de calidad.",
+		emoji: "🏆",
+		title: "Calidad Garantizada",
+		description: "Certificados internacionales y avalados por los más altos estándares de calidad mundial.",
+	},
+];
+
+const testimonials = [
+	{
+		text: "No creía que algo natural pudiera cambiar tanto mi vida. Después de años luchando con mi salud, finalmente encontré la solución real que necesitaba.",
+		author: "María González",
+		role: "Cliente satisfecha",
+	},
+	{
+		text: "Desde que uso estos productos, tengo más energía, duermo mejor y ya no me duele el cuerpo como antes. Mi vida cambió completamente.",
+		author: "José Ramírez",
+		role: "Cliente feliz",
+	},
+	{
+		text: "Estaba escéptica al principio, pero me sorprendieron los resultados. ¡Ahora hasta recomiendo el producto a toda mi familia!",
+		author: "Laura Méndez",
+		role: "Emprendedora y usuaria",
+	},
+	{
+		text: "Después de probar muchas alternativas sin éxito, estos productos me devolvieron la esperanza y la salud que había perdido.",
+		author: "Carlos Torres",
+		role: "Cliente agradecido",
 	},
 ];
 
@@ -31,11 +55,49 @@ const videos = [
 
 export default function Home() {
 	const [currentVideo, setCurrentVideo] = useState(0);
+	const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+	// Auto-cambio de testimonios cada 4 segundos
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+		}, 4000);
+		return () => clearInterval(interval);
+	}, []);
+
+	// Remover cualquier emoji / icono pequeño de bebida (taza, vaso, etc.) que se inyecte fuera del código
+	useEffect(() => {
+		const UNWANTED = new Set(['☕','🍵','🍶','🥛','🥤','🧋','🍺','🍻','🍷','🍸','🍹']);
+		const KEYWORDS = ['coffee','café','cafe','vaso','taza','drink'];
+		const isUnwantedElement = (el: HTMLElement) => {
+			const txt = el.textContent?.trim() || '';
+			if (el.childNodes.length === 1 && UNWANTED.has(txt)) return true;
+			// Revisar atributos comunes
+			const attrs = [el.getAttribute('alt'), el.getAttribute('title'), el.getAttribute('aria-label')]
+				.filter(Boolean)
+				.map(s => s!.toLowerCase());
+			if (attrs.some(a => KEYWORDS.some(k => a.includes(k)))) return true;
+			// Imágenes muy pequeñas sospechosas con palabras clave
+			if (el.tagName === 'IMG') {
+				const img = el as HTMLImageElement;
+				if ((img.width && img.width < 90) && attrs.length && attrs.some(a => KEYWORDS.some(k => a.includes(k)))) return true;
+			}
+			return false;
+		};
+		const clean = () => {
+			const all = Array.from(document.querySelectorAll('body *')) as HTMLElement[];
+			all.forEach(el => { if (isUnwantedElement(el)) el.remove(); });
+		};
+		clean();
+		const obs = new MutationObserver(() => clean());
+		obs.observe(document.body, { childList: true, subtree: true });
+		return () => obs.disconnect();
+	}, []);
 
 	const handleWhatsAppContact = () => {
 		const message =
 			"Hola, me interesa conocer más sobre sus productos. ¿Podrían brindarme más información?";
-		const url = `https://wa.me/51999999999?text=${encodeURIComponent(message)}`;
+		const url = `https://wa.me/51900653836?text=${encodeURIComponent(message)}`;
 		window.open(url, "_blank");
 	};
 
@@ -43,58 +105,9 @@ export default function Home() {
 		<div className="min-h-screen">
 			{/* Hero Section */}
 			<section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden">
-				<div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
-				<motion.div
-					initial={{ opacity: 0, y: 50 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.8, delay: 0.2 }}
-					className="relative z-10 max-w-4xl mx-auto px-4 text-center"
-				>
-					<motion.h1
-						initial={{ opacity: 0, y: 30 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.8, delay: 0.4 }}
-						className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent"
-					>
-						Descubre el Futuro
-					</motion.h1>
-					<motion.h2
-						initial={{ opacity: 0, y: 30 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.8, delay: 0.6 }}
-						className="text-2xl md:text-4xl font-semibold mb-8 text-gray-700"
-					>
-						de tu Bienestar
-					</motion.h2>
-					<motion.p
-						initial={{ opacity: 0, y: 30 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.8, delay: 0.8 }}
-						className="text-xl mb-12 text-gray-600 leading-relaxed max-w-2xl mx-auto"
-					>
-						Productos innovadores que transforman vidas. Únete a miles de
-						personas que ya han mejorado su salud y bienestar con nuestras
-						soluciones premium.
-					</motion.p>
-					<motion.div
-						initial={{ opacity: 0, y: 30 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.8, delay: 1 }}
-						className="flex flex-col sm:flex-row gap-4 justify-center"
-					>
-						<button
-							onClick={handleWhatsAppContact}
-							className="btn-primary flex items-center justify-center gap-2 text-lg px-8 py-4"
-						>
-							<FaWhatsapp /> Contactar Ahora
-						</button>
-						<button className="btn-secondary text-lg px-8 py-4">
-							Ver Productos
-						</button>
-					</motion.div>
-				</motion.div>
-
-				{/* Floating Elements */}
+				<div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-purple-600/5"></div>
+				
+				{/* Floating Background Elements */}
 				<motion.div
 					animate={{
 						y: [0, -20, 0],
@@ -119,6 +132,101 @@ export default function Home() {
 					}}
 					className="absolute bottom-1/4 right-10 w-32 h-32 bg-purple-200 rounded-full opacity-20"
 				/>
+
+				{/* Main Content */}
+				<div className="relative z-10 max-w-7xl mx-auto px-4 py-12">
+					<div className="grid lg:grid-cols-2 gap-12 items-center">
+						{/* Left Column - Content */}
+						<motion.div
+							initial={{ opacity: 0, x: -50 }}
+							animate={{ opacity: 1, x: 0 }}
+							transition={{ duration: 0.8, delay: 0.2 }}
+							className="text-center lg:text-left"
+						>
+							{/* Promo Banner */}
+							<motion.div
+								initial={{ opacity: 0, y: -20 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.6 }}
+								className="inline-flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium mb-6"
+							>
+								🎯 PROMO DE AGOSTO: Asesoría gratuita + guía de bienestar
+							</motion.div>
+
+							<motion.h1
+								initial={{ opacity: 0, y: 30 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.8, delay: 0.4 }}
+								className="font-bold mb-6 leading-tight text-[clamp(2.2rem,6vw,4.2rem)]"
+							>
+								<span className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">Recupera tu energía, fortalece tu salud</span> <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">y transforma tu vida</span>
+							</motion.h1>
+
+							<motion.p
+								initial={{ opacity: 0, y: 30 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.8, delay: 0.6 }}
+								className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-xl"
+							>
+								Con productos epigenéticos naturales y tecnología de vanguardia. 
+								Miles de personas ya están viviendo con menos dolor, más vitalidad y bienestar. 
+								<span className="font-semibold text-gray-800">¿Te unes?</span>
+							</motion.p>
+
+							<motion.div
+								initial={{ opacity: 0, y: 30 }}
+								animate={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.8, delay: 0.8 }}
+								className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+							>
+								<button
+									onClick={handleWhatsAppContact}
+									className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
+								>
+									<FaWhatsapp /> Empezar mi cambio
+								</button>
+								<button className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300">
+									Ver productos
+								</button>
+							</motion.div>
+						</motion.div>
+
+						{/* Right Column - Product Image */}
+						<motion.div
+							initial={{ opacity: 0, x: 50 }}
+							animate={{ opacity: 1, x: 0 }}
+							transition={{ duration: 0.8, delay: 0.4 }}
+							className="relative flex justify-center lg:justify-end"
+						>
+	       <div className="relative inline-block" style={{ width: '100%', maxWidth: '600px' }}>
+	       {/* Main product image sin borde */}
+	       <div 
+		       className="relative rounded-3xl overflow-hidden"
+		       style={{ width: '100%', display: 'inline-block' }}
+	       >
+		       {/* Etiquetas pegadas a la imagen, alineadas verticalmente */}
+		       <img 
+			       src="src/assets/productos/El texto del párrafo (29).png"
+			       alt="Mujer feliz sosteniendo producto ACTIVZ OPTIMEND"
+			       className="object-cover rounded-3xl w-full h-auto"
+			       style={{ display: 'block' }}
+			       onError={(e) => {
+				       e.currentTarget.style.display = 'none';
+				       const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+				       if (fallback) fallback.style.display = 'flex';
+			       }}
+		       />
+		       {/* Fallback content */}
+		       <div className="hidden w-full h-96 bg-gradient-to-br from-purple-100 to-blue-100 rounded-3xl items-center justify-center">
+			       <div className="text-6xl mb-4">💊</div>
+			       <div className="text-2xl font-bold text-purple-600 mb-2">ACTIVZ</div>
+			       <div className="text-lg text-gray-600">OPTIMEND</div>
+		       </div>
+	       </div>
+				</div>
+						</motion.div>
+					</div>
+				</div>
 			</section>
 
 			{/* Features Section */}
@@ -132,10 +240,10 @@ export default function Home() {
 						className="text-center mb-16"
 					>
 						<h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
-							¿Por Qué Elegirnos?
+							¿Por qué miles nos prefieren?
 						</h2>
-						<p className="text-xl text-gray-600 max-w-2xl mx-auto">
-							Somos líderes en innovación y calidad, comprometidos con tu bienestar
+						<p className="text-xl text-gray-600 max-w-3xl mx-auto">
+							Porque combinamos ciencia, naturaleza y resultados reales. Aquí no vendemos humo, vendemos transformación.
 						</p>
 					</motion.div>
 
@@ -147,11 +255,11 @@ export default function Home() {
 								whileInView={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.6, delay: index * 0.2 }}
 								viewport={{ once: true }}
-								whileHover={{ y: -10 }}
-								className="card text-center group hover:bg-gradient-to-br hover:from-blue-50 hover:to-purple-50"
+								whileHover={{ y: -10, scale: 1.02 }}
+								className="bg-white p-8 rounded-xl text-center group hover:shadow-2xl transition-all duration-300 border border-gray-100"
 							>
-								<div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">
-									{feature.icon}
+								<div className="text-6xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
+									{feature.emoji}
 								</div>
 								<h3 className="text-2xl font-bold mb-4 text-gray-800">
 									{feature.title}
@@ -176,11 +284,55 @@ export default function Home() {
 						className="text-center mb-16"
 					>
 						<h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
-							Testimonios en Video
+							Historias Reales, Cambios Reales
 						</h2>
-						<p className="text-xl text-gray-600">
-							Descubre lo que nuestros clientes tienen que decir
+						<p className="text-xl text-gray-600 mb-8">
+							Nada habla mejor que los resultados. Mira lo que dicen quienes ya confiaron en nosotros.
 						</p>
+						<div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl max-w-4xl mx-auto mb-12 border border-white/20">
+							<AnimatePresence mode="wait">
+								<motion.div
+									key={currentTestimonial}
+									initial={{ opacity: 0, y: 20 }}
+									animate={{ opacity: 1, y: 0 }}
+									exit={{ opacity: 0, y: -20 }}
+									transition={{ duration: 0.6, ease: "easeInOut" }}
+									className="text-center"
+								>
+									<blockquote className="text-xl md:text-2xl font-medium text-gray-700 italic mb-6 leading-relaxed">
+										"{testimonials[currentTestimonial].text}"
+									</blockquote>
+									<div className="flex items-center justify-center gap-4">
+										<div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+											{testimonials[currentTestimonial].author.charAt(0)}
+										</div>
+										<div className="text-left">
+											<cite className="block text-blue-600 font-semibold text-lg not-italic">
+												{testimonials[currentTestimonial].author}
+											</cite>
+											<span className="text-gray-500 text-sm">
+												{testimonials[currentTestimonial].role}
+											</span>
+										</div>
+									</div>
+								</motion.div>
+							</AnimatePresence>
+							
+							{/* Indicadores de testimonios */}
+							<div className="flex justify-center mt-6 space-x-2">
+								{testimonials.map((_, index) => (
+									<button
+										key={index}
+										onClick={() => setCurrentTestimonial(index)}
+										className={`w-2 h-2 rounded-full transition-all duration-300 ${
+											index === currentTestimonial 
+												? "bg-blue-600 w-6" 
+												: "bg-gray-300 hover:bg-gray-400"
+										}`}
+									/>
+								))}
+							</div>
+						</div>
 					</motion.div>
 
 					<div className="relative max-w-4xl mx-auto">
@@ -192,13 +344,15 @@ export default function Home() {
 								transition={{ duration: 0.5 }}
 								className="relative bg-white rounded-lg shadow-lg p-4"
 							>
-								<iframe
-									src={videos[currentVideo].src}
-									title={videos[currentVideo].title}
-									className="w-full h-64 rounded-lg"
-									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-									allowFullScreen
-								></iframe>
+								<div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+									<iframe
+										src={videos[currentVideo].src}
+										title={videos[currentVideo].title}
+										className="absolute top-0 left-0 w-full h-full rounded-lg"
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+										allowFullScreen
+									></iframe>
+								</div>
 								<h4 className="text-center font-bold text-gray-800 mt-4">
 									{videos[currentVideo].title}
 								</h4>
@@ -239,31 +393,9 @@ export default function Home() {
 				</div>
 			</section>
 
-			{/* CTA Section */}
-			<section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-				<div className="max-w-4xl mx-auto px-4 text-center">
-					<motion.div
-						initial={{ opacity: 0, y: 30 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.6 }}
-						viewport={{ once: true }}
-					>
-						<h2 className="text-4xl md:text-5xl font-bold mb-6">
-							¿Listo para Transformar tu Vida?
-						</h2>
-						<p className="text-xl mb-8 opacity-90">
-							No esperes más. Únete a nuestra comunidad y comienza tu viaje
-							hacia un mejor bienestar hoy mismo.
-						</p>
-						<button
-							onClick={handleWhatsAppContact}
-							className="bg-white text-blue-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2 mx-auto"
-						>
-							<FaWhatsapp /> Comenzar Ahora
-						</button>
-					</motion.div>
-				</div>
-			</section>
+			{/* Footer */}
+			<SocialLinks />
+
 		</div>
 	);
 }

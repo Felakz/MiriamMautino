@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import SocialLinks from "../components/SocialLinks";
 
 // Ajustar el degradado para el producto "Linq"
 const productos = [
@@ -14,7 +15,7 @@ const productos = [
 			"Mejora el estado de ánimo",
 			"Fortalece el sistema inmune",
 		],
-		price: "S/. 299",
+		price: "S/. 300",
 		image: "/src/assets/productos/LINQ.png",
 		path: "/productos/LINQ",
 		color: "bg-gradient-to-br from-yellow-200 to-yellow-400",
@@ -28,7 +29,7 @@ const productos = [
 			"Acelera la recuperación",
 			"Optimiza la concentración",
 		],
-		price: "S/. 349",
+		price: "S/. 270",
 		image: "/src/assets/productos/GNM-X.png",
 		path: "/productos/GNM-X",
 		color: "bg-gradient-to-br from-green-200 to-emerald-400",
@@ -42,7 +43,7 @@ const productos = [
 			"Aumenta la concentración",
 			"Reduce el estrés mental",
 		],
-		price: "S/. 399",
+		price: "S/. 300",
 		image: "/src/assets/productos/OPTIMEND.png",
 		path: "/productos/OPTIMEND",
 		color: "bg-gradient-to-br from-purple-200 to-pink-400",
@@ -56,7 +57,7 @@ const productos = [
 			"Aumenta la energía",
 			"Refuerza el sistema inmunológico",
 		],
-		price: "S/. 279",
+		price: "S/. 280",
 		image: "/src/assets/productos/AIRO.png",
 		path: "/productos/AIRO",
 		color: "bg-gradient-to-br from-orange-200 to-yellow-400",
@@ -70,7 +71,7 @@ const productos = [
 			"Mejora el rendimiento físico",
 			"Favorece la recuperación muscular",
 		],
-		price: "S/. 319",
+		price: "S/. 280",
 		image: "/src/assets/productos/NITROX.png",
 		path: "/productos/NITROX",
 		color: "bg-gradient-to-br from-red-200 to-red-400",
@@ -79,14 +80,6 @@ const productos = [
 
 export default function Productos() {
 	const [currentProduct, setCurrentProduct] = useState(0);
-
-	// Auto-rotate products
-	useEffect(() => {
-		const interval = setInterval(() => {
-			setCurrentProduct((prev) => (prev + 1) % productos.length);
-		}, 4000);
-		return () => clearInterval(interval);
-	}, []);
 
 	return (
 		<div className="min-h-screen pt-24">
@@ -293,6 +286,9 @@ export default function Productos() {
 					</div>
 				</div>
 			</section>
+
+			{/* Footer */}
+			<SocialLinks />
 		</div>
 	);
 }

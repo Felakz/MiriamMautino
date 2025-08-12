@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FaCheckCircle, FaLeaf, FaFlask, FaUsers } from "react-icons/fa";
+import SocialLinks from "../components/SocialLinks";
 
 const benefits = [
   "Ingredientes 100% naturales",
@@ -11,7 +12,7 @@ const benefits = [
 ];
 
 const stats = [
-  { number: "50,000+", label: "Clientes Satisfechos" },
+  { number: "5,000+", label: "Clientes Satisfechos" },
   { number: "15+", label: "Años de Experiencia" },
   { number: "99%", label: "Tasa de Satisfacción" },
   { number: "24/7", label: "Soporte al Cliente" }
@@ -181,6 +182,9 @@ export default function InfoProducto() {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <SocialLinks />
     </div>
   );
 }

@@ -9,9 +9,15 @@ import Optimend from "./pages/Optimend";
 import RegistroCliente from "./pages/RegistroCliente";
 import RegistroEmprendedor from "./pages/RegistroEmprendedor";
 import ScrollToTop from "./components/ScrollToTop";
-import SocialLinks from "./components/SocialLinks";
 import Airo from "./pages/Airo";
 import Nitrox from "./pages/Nitrox";
+import Terminos from "./pages/Terminos";
+import Politicas from "./pages/Politicas";
+import Derechos from "./pages/Derechos";
+import Cookies from "./pages/Cookies";
+import Emprendimiento from "./pages/Emprendimiento";
+import Contacto from "./pages/Contacto";
+import Preguntas from "./pages/Preguntas";
 
 function App() {
   return (
@@ -31,11 +37,15 @@ function App() {
             <Route path="/registro/emprendedor" element={<RegistroEmprendedor />} />
             <Route path="/productos/airo" element={<Airo />} />
             <Route path="/productos/nitrox" element={<Nitrox />} />
+            <Route path="/terminos" element={<Terminos />} />
+            <Route path="/politicas" element={<Politicas />} />
+            <Route path="/derechos" element={<Derechos />} />
+            <Route path="/cookies" element={<Cookies />} />
+            <Route path="/emprendimiento" element={<Emprendimiento />} />
+            <Route path="/contacto" element={<Contacto />} />
+            <Route path="/preguntas" element={<Preguntas />} />
           </Routes>
         </main>
-        <footer className="mt-auto">
-          <SocialLinks />
-        </footer>
       </div>
     </Router>
   );

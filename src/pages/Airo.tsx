@@ -1,10 +1,11 @@
 import { FaWhatsapp, FaStar } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import SocialLinks from "../components/SocialLinks";
 
 const Airo = () => {
   const handleWhatsAppOrder = () => {
     const message = "Hola, estoy interesado/a en el producto Airo. ¿Podrían brindarme más información sobre precios y disponibilidad?";
-    const url = `https://wa.me/51926206841?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/51900653836?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   };
 
@@ -31,7 +32,7 @@ const Airo = () => {
                 ))}
                 <span className="text-gray-600 ml-2">(4.8/5 - 2,134 reseñas)</span>
               </div>
-              <div className="text-4xl font-bold text-orange-500 mb-8">S/. 499</div>
+              <div className="text-4xl font-bold text-orange-500 mb-8">S/. 280</div>
               <button 
                 onClick={handleWhatsAppOrder}
                 className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2 text-lg"
@@ -108,6 +109,13 @@ const Airo = () => {
           </div>
         </div>
       </section>
+      
+      {/* Footer */}
+      <SocialLinks 
+        gradientColors="from-orange-500 to-orange-600"
+        inputBgColor="bg-orange-700"
+        buttonTextColor="text-orange-600"
+      />
     </div>
   );
 };

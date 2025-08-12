@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import { FaWhatsapp, FaCheckCircle } from "react-icons/fa";
+import SocialLinks from "../components/SocialLinks";
 
 export default function Optimend() {
   const handleWhatsAppOrder = () => {
     const message = "Hola, estoy interesado/a en el producto Optimend. ¿Podrían brindarme más información sobre precios y disponibilidad?";
-    const url = `https://wa.me/51999999999?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/51900653836?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   };
 
@@ -49,7 +50,7 @@ export default function Optimend() {
                 ))}
                 <span className="text-gray-600 ml-2">(4.9/5 - 3,284 reseñas)</span>
               </div>
-              <div className="text-4xl font-bold text-purple-600 mb-8">S/. 399</div>
+              <div className="text-4xl font-bold text-purple-600 mb-8">S/. 300</div>
               <button 
                 onClick={handleWhatsAppOrder}
                 className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2 text-lg"
@@ -146,31 +147,13 @@ export default function Optimend() {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Optimiza tu Mente Hoy Mismo
-            </h2>
-            <p className="text-xl mb-8 opacity-90">
-              Únete a miles de profesionales, estudiantes y emprendedores que han mejorado su capacidad mental con Optimend
-            </p>
-            <button 
-              onClick={handleWhatsAppOrder}
-              className="bg-white text-purple-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center gap-2 mx-auto"
-            >
-              <FaWhatsapp /> Ordenar Ahora - S/. 399
-            </button>
-          </motion.div>
-        </div>
-      </section>
+      
+      {/* Footer */}
+      <SocialLinks 
+        gradientColors="from-purple-500 to-purple-600"
+        inputBgColor="bg-purple-700"
+        buttonTextColor="text-purple-600"
+      />
     </div>
   );
 }
