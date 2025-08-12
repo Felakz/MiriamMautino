@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaWhatsapp, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import SocialLinks from "../components/SocialLinks";
+import optimendImage from "../assets/productos/El texto del párrafo (29).png";
 
 const features = [
 	{
@@ -206,7 +207,7 @@ export default function Home() {
 	       >
 		       {/* Etiquetas pegadas a la imagen, alineadas verticalmente */}
 		       <img 
-			       src="src/assets/productos/El texto del párrafo (29).png"
+			       src={optimendImage}
 			       alt="Mujer feliz sosteniendo producto ACTIVZ OPTIMEND"
 			       className="object-cover rounded-3xl w-full h-auto"
 			       style={{ display: 'block' }}
