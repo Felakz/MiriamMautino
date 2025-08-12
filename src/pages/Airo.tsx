@@ -113,8 +113,6 @@ const Airo = () => {
       {/* Footer */}
       <SocialLinks 
         gradientColors="from-orange-500 to-orange-600"
-        inputBgColor="bg-orange-700"
-        buttonTextColor="text-orange-600"
       />
     </div>
   );

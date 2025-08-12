@@ -156,8 +156,6 @@ export default function Linq() {
       {/* Footer */}
       <SocialLinks 
         gradientColors="from-yellow-500 to-yellow-600"
-        inputBgColor="bg-yellow-700"
-        buttonTextColor="text-yellow-600"
       />
     </div>
   );

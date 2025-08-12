@@ -2,14 +2,10 @@ import { FaFacebook, FaInstagram, FaYoutube, FaTiktok } from "react-icons/fa";
 
 interface SocialLinksProps {
   gradientColors?: string;
-  inputBgColor?: string;
-  buttonTextColor?: string;
 }
 
 const SocialLinks = ({ 
-  gradientColors = "from-blue-600 to-purple-600",
-  inputBgColor = "bg-blue-800",
-  buttonTextColor = "text-blue-600"
+  gradientColors = "from-blue-600 to-purple-600"
 }: SocialLinksProps) => {
   return (
     <footer className={`bg-gradient-to-r ${gradientColors} text-white py-10`}>

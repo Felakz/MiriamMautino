@@ -102,8 +102,6 @@ const Nitrox = () => {
       {/* Footer */}
       <SocialLinks 
         gradientColors="from-red-500 to-red-600"
-        inputBgColor="bg-red-700"
-        buttonTextColor="text-red-600"
       />
     </div>
   );

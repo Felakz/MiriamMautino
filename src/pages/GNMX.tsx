@@ -156,8 +156,6 @@ export default function GNMX() {
       {/* Footer */}
       <SocialLinks 
         gradientColors="from-green-500 to-green-600"
-        inputBgColor="bg-green-700"
-        buttonTextColor="text-green-600"
       />
     </div>
   );

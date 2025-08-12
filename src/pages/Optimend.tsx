@@ -151,8 +151,6 @@ export default function Optimend() {
       {/* Footer */}
       <SocialLinks 
         gradientColors="from-purple-500 to-purple-600"
-        inputBgColor="bg-purple-700"
-        buttonTextColor="text-purple-600"
       />
     </div>
   );
