@@ -4,6 +4,139 @@ import { useState, useEffect } from "react";
 import SocialLinks from "../components/SocialLinks";
 import optimendImage from "../assets/productos/El texto del párrafo (29).png";
 
+// Componente de fondo animado integrado
+const AnimatedBackgroundHome = () => {
+	return (
+		<div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+			{/* Fondo base con degradado romántico */}
+			<div className="absolute inset-0 bg-gradient-to-br from-pink-400 via-purple-500 to-pink-600 opacity-20 animate-pulse"></div>
+			
+			{/* Corazones flotantes */}
+			{Array.from({ length: 15 }, (_, i) => (
+				<div
+					key={`heart-${i}`}
+					className="absolute animate-bounce"
+					style={{
+						left: `${Math.random() * 100}%`,
+						top: `${Math.random() * 100}%`,
+						animationDelay: `${Math.random() * 5}s`,
+						animationDuration: `${3 + Math.random() * 2}s`,
+					}}
+				>
+					<div className="text-pink-400 text-xl opacity-60">💖</div>
+				</div>
+			))}
+			
+			{/* Estrellas parpadeantes */}
+			{Array.from({ length: 20 }, (_, i) => (
+				<div
+					key={`star-${i}`}
+					className="absolute animate-ping"
+					style={{
+						left: `${Math.random() * 100}%`,
+						top: `${Math.random() * 100}%`,
+						animationDelay: `${Math.random() * 3}s`,
+						animationDuration: `${2 + Math.random() * 1}s`,
+					}}
+				>
+					<div className="text-pink-300 text-sm opacity-50">✨</div>
+				</div>
+			))}
+			
+			{/* Partículas rosadas */}
+			{Array.from({ length: 10 }, (_, i) => (
+				<div
+					key={`particle-${i}`}
+					className="absolute w-2 h-2 bg-pink-400 rounded-full opacity-30 animate-pulse"
+					style={{
+						left: `${Math.random() * 100}%`,
+						top: `${Math.random() * 100}%`,
+						animationDelay: `${Math.random() * 4}s`,
+					}}
+				></div>
+			))}
+		</div>
+	);
+};
+
+// Componente de animaciones por encima del contenido
+const ForegroundAnimations = () => {
+	return (
+		<div className="fixed inset-0 z-5 pointer-events-none overflow-hidden">
+			{/* Corazones grandes flotando por encima */}
+			{Array.from({ length: 8 }, (_, i) => (
+				<div
+					key={`fg-heart-${i}`}
+					className="absolute animate-bounce opacity-60"
+					style={{
+						left: `${Math.random() * 100}%`,
+						top: `${Math.random() * 100}%`,
+						animationDelay: `${Math.random() * 6}s`,
+						animationDuration: `${4 + Math.random() * 3}s`,
+					}}
+				>
+					<div className="text-pink-500 text-3xl drop-shadow-lg">💕</div>
+				</div>
+			))}
+			
+			{/* Estrellas brillantes por encima */}
+			{Array.from({ length: 12 }, (_, i) => (
+				<div
+					key={`fg-star-${i}`}
+					className="absolute animate-spin opacity-50"
+					style={{
+						left: `${Math.random() * 100}%`,
+						top: `${Math.random() * 100}%`,
+						animationDelay: `${Math.random() * 4}s`,
+						animationDuration: `${3 + Math.random() * 2}s`,
+					}}
+				>
+					<div className="text-yellow-400 text-2xl drop-shadow-lg">⭐</div>
+				</div>
+			))}
+			
+			{/* Burbujas de amor ascendentes */}
+			{Array.from({ length: 6 }, (_, i) => (
+				<div
+					key={`bubble-${i}`}
+					className="absolute animate-pulse"
+					style={{
+						left: `${Math.random() * 100}%`,
+						bottom: '-50px',
+						animationDelay: `${i * 2}s`,
+					}}
+				>
+					<div 
+						className="text-pink-400 text-xl opacity-50"
+						style={{
+							animation: `riseUp ${8 + Math.random() * 4}s ease-out infinite`,
+							animationDelay: `${i * 1.5}s`,
+						}}
+					>
+						💖
+					</div>
+				</div>
+			))}
+			
+			{/* Mariposas volando */}
+			{Array.from({ length: 4 }, (_, i) => (
+				<div
+					key={`butterfly-${i}`}
+					className="absolute opacity-55"
+					style={{
+						left: `${Math.random() * 100}%`,
+						top: `${Math.random() * 100}%`,
+						animation: `flyAround ${10 + Math.random() * 5}s ease-in-out infinite`,
+						animationDelay: `${Math.random() * 8}s`,
+					}}
+				>
+					<div className="text-purple-400 text-2xl drop-shadow-lg">🦋</div>
+				</div>
+			))}
+		</div>
+	);
+};
+
 const features = [
 	{
 		emoji: "🚀",
@@ -103,9 +236,15 @@ export default function Home() {
 	};
 
 	return (
-		<div className="min-h-screen">
+		<div className="min-h-screen relative">
+			{/* Fondo animado específico para Home */}
+			<AnimatedBackgroundHome />
+			
+			{/* Animaciones del primer plano */}
+			<ForegroundAnimations />
+			
 			{/* Hero Section */}
-			<section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50 via-white to-pink-50 overflow-hidden">
+			<section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-50/80 via-white/80 to-pink-50/80 backdrop-blur-sm overflow-hidden z-10">
 				<div className="absolute inset-0 bg-gradient-to-r from-purple-600/5 to-pink-600/5"></div>
 				
 				{/* Floating Background Elements */}
@@ -231,7 +370,7 @@ export default function Home() {
 			</section>
 
 			{/* Features Section */}
-			<section className="py-20 bg-white">
+			<section className="py-20 bg-white/90 backdrop-blur-sm relative z-10">
 				<div className="max-w-6xl mx-auto px-4">
 					<motion.div
 						initial={{ opacity: 0, y: 30 }}
@@ -275,7 +414,7 @@ export default function Home() {
 			</section>
 
 			{/* Testimonials Section */}
-			<section className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
+			<section className="py-20 bg-gradient-to-br from-purple-50/80 to-pink-50/80 backdrop-blur-sm relative z-10">
 				<div className="max-w-6xl mx-auto px-4">
 					<motion.div
 						initial={{ opacity: 0, y: 30 }}
@@ -290,7 +429,7 @@ export default function Home() {
 						<p className="text-xl text-gray-600 mb-8">
 							Nada habla mejor que los resultados. Mira lo que dicen quienes ya confiaron en nosotros.
 						</p>
-						<div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl max-w-4xl mx-auto mb-12 border border-white/20">
+						<div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl max-w-4xl mx-auto mb-12 border border-white/20 relative z-30">
 							<AnimatePresence mode="wait">
 								<motion.div
 									key={currentTestimonial}
@@ -343,7 +482,7 @@ export default function Home() {
 								initial={{ opacity: 0, scale: 0.9 }}
 								animate={{ opacity: 1, scale: 1 }}
 								transition={{ duration: 0.5 }}
-								className="relative bg-white rounded-lg shadow-lg p-4"
+								className="relative bg-white rounded-lg shadow-lg p-4 z-30"
 							>
 								<div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
 									<iframe
@@ -378,7 +517,7 @@ export default function Home() {
 									(prev) => (prev - 1 + videos.length) % videos.length
 								)
 							}
-							className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors"
+							className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors z-40"
 						>
 							<FaChevronLeft className="text-gray-600" />
 						</button>
@@ -386,7 +525,7 @@ export default function Home() {
 							onClick={() =>
 								setCurrentVideo((prev) => (prev + 1) % videos.length)
 							}
-							className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors"
+							className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors z-40"
 						>
 							<FaChevronRight className="text-gray-600" />
 						</button>
@@ -395,7 +534,12 @@ export default function Home() {
 			</section>
 
 			{/* Footer */}
-			<SocialLinks gradientColors="from-purple-500 to-pink-600" />
+			<div className="relative z-10">
+				<SocialLinks 
+					gradientColors="from-purple-200 via-pink-200 to-purple-300"
+					textColor="text-black"
+				/>
+			</div>
 
 		</div>
 	);

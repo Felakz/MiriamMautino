@@ -129,7 +129,10 @@ export default function Derechos() {
       </section>
 
       {/* Footer */}
-      <SocialLinks gradientColors="from-purple-500 to-pink-600" />
+      <SocialLinks 
+        gradientColors="from-pink-100 via-purple-100 to-pink-200" 
+        textColor="text-gray-800"
+      />
     </div>
   );
 }

@@ -155,7 +155,8 @@ export default function GNMX() {
       
       {/* Footer */}
       <SocialLinks 
-        gradientColors="from-green-500 to-green-600"
+        gradientColors="from-green-200 via-green-300 to-emerald-200"
+        textColor="text-gray-800"
       />
     </div>
   );

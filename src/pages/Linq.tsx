@@ -155,7 +155,8 @@ export default function Linq() {
       
       {/* Footer */}
       <SocialLinks 
-        gradientColors="from-yellow-500 to-yellow-600"
+        gradientColors="from-yellow-200 via-yellow-300 to-orange-200"
+        textColor="text-gray-800"
       />
     </div>
   );

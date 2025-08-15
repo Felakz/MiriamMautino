@@ -22,15 +22,15 @@ export default function InfoProducto() {
   return (
     <div className="min-h-screen pt-24">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+      <section className="py-20 bg-gradient-to-br from-purple-50/80 via-white/80 to-pink-50/80 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            className="text-center mb-16">
+
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-500 via-purple-600 to-pink-500 bg-clip-text text-transparent">
               Información del Producto
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -41,7 +41,7 @@ export default function InfoProducto() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white/90 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -77,23 +77,23 @@ export default function InfoProducto() {
               viewport={{ once: true }}
               className="grid grid-cols-2 gap-6"
             >
-              <div className="card text-center bg-gradient-to-br from-blue-50 to-blue-100">
-                <FaLeaf className="text-4xl text-green-500 mx-auto mb-4" />
+              <div className="card text-center bg-gradient-to-br from-purple-50 to-pink-100">
+                <FaLeaf className="text-4xl text-purple-500 mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-gray-800 mb-2">Natural</h3>
                 <p className="text-gray-600">Ingredientes orgánicos y naturales</p>
               </div>
-              <div className="card text-center bg-gradient-to-br from-purple-50 to-purple-100">
-                <FaFlask className="text-4xl text-purple-500 mx-auto mb-4" />
+              <div className="card text-center bg-gradient-to-br from-pink-50 to-purple-100">
+                <FaFlask className="text-4xl text-pink-500 mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-gray-800 mb-2">Científico</h3>
                 <p className="text-gray-600">Respaldado por investigación</p>
               </div>
-              <div className="card text-center bg-gradient-to-br from-green-50 to-green-100">
-                <FaUsers className="text-4xl text-blue-500 mx-auto mb-4" />
+              <div className="card text-center bg-gradient-to-br from-purple-50 to-pink-100">
+                <FaUsers className="text-4xl text-purple-500 mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-gray-800 mb-2">Confiable</h3>
                 <p className="text-gray-600">Miles de clientes satisfechos</p>
               </div>
-              <div className="card text-center bg-gradient-to-br from-yellow-50 to-yellow-100">
-                <FaCheckCircle className="text-4xl text-yellow-500 mx-auto mb-4" />
+              <div className="card text-center bg-gradient-to-br from-pink-50 to-purple-100">
+                <FaCheckCircle className="text-4xl text-pink-500 mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-gray-800 mb-2">Efectivo</h3>
                 <p className="text-gray-600">Resultados comprobados</p>
               </div>
@@ -103,7 +103,7 @@ export default function InfoProducto() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <section className="py-20 bg-gradient-to-r from-purple-200 via-pink-200 to-purple-300">
         <div className="max-w-6xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -112,8 +112,8 @@ export default function InfoProducto() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-4">Números Que Hablan Por Sí Solos</h2>
-            <p className="text-xl opacity-90">La confianza de nuestros clientes es nuestro mayor logro</p>
+            <h2 className="text-4xl font-bold mb-4 text-black">Números Que Hablan Por Sí Solos</h2>
+            <p className="text-xl text-black/90">La confianza de nuestros clientes es nuestro mayor logro</p>
           </motion.div>
           
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -126,8 +126,8 @@ export default function InfoProducto() {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="text-4xl md:text-5xl font-bold mb-2">{stat.number}</div>
-                <div className="text-lg opacity-90">{stat.label}</div>
+                <div className="text-4xl md:text-5xl font-bold mb-2 text-black">{stat.number}</div>
+                <div className="text-lg text-black/90">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -135,7 +135,7 @@ export default function InfoProducto() {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-br from-purple-50/80 to-pink-50/80 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -184,7 +184,10 @@ export default function InfoProducto() {
       </section>
 
       {/* Footer */}
-      <SocialLinks gradientColors="from-purple-500 to-pink-600" />
+      <SocialLinks 
+        gradientColors="from-purple-200 via-pink-200 to-purple-300" 
+        textColor="text-black"
+      />
     </div>
   );
 }

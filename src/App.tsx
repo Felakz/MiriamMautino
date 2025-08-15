@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import AnimatedBackground from "./components/AnimatedBackground";
 import Home from "./pages/Home";
 import InfoProducto from "./pages/InfoProducto";
 import Productos from "./pages/Productos";
@@ -23,6 +24,7 @@ function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-screen bg-white">
+        <AnimatedBackground />
         <ScrollToTop />
         <Navbar />
         <main className="flex-grow">

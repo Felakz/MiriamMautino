@@ -254,7 +254,10 @@ export default function Preguntas() {
       </section>
 
       {/* Footer */}
-      <SocialLinks gradientColors="from-purple-500 to-pink-600" />
+      <SocialLinks 
+        gradientColors="from-purple-300 via-pink-300 to-purple-400" 
+        textColor="text-white"
+      />
     </div>
   );
 }

@@ -82,7 +82,10 @@ export default function Terminos() {
       </section>
 
       {/* Footer */}
-      <SocialLinks gradientColors="from-purple-500 to-pink-600" />
+      <SocialLinks 
+        gradientColors="from-pink-200 via-purple-200 to-pink-300" 
+        textColor="text-gray-800"
+      />
     </div>
   );
 }

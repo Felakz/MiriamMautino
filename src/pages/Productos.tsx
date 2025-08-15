@@ -288,7 +288,10 @@ export default function Productos() {
 			</section>
 
 			{/* Footer */}
-			<SocialLinks gradientColors="from-purple-500 to-pink-600" />
+			<SocialLinks 
+				gradientColors="from-purple-200 via-pink-200 to-purple-300" 
+				textColor="text-gray-800"
+			/>
 		</div>
 	);
 }

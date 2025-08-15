@@ -1,4 +1,4 @@
-import { FaWhatsapp, FaStar } from 'react-icons/fa';
+import { FaWhatsapp, FaStar, FaCheckCircle } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import SocialLinks from "../components/SocialLinks";
 
@@ -81,7 +81,7 @@ const Airo = () => {
               "Fortalece el sistema inmunológico",
             ].map((beneficio, index) => (
               <div key={index} className="flex items-center gap-4 bg-yellow-50 p-4 rounded-lg shadow">
-                <span className="text-yellow-500 text-xl">✔</span>
+                <FaCheckCircle className="text-orange-500 text-xl flex-shrink-0" />
                 <p className="text-gray-700">{beneficio}</p>
               </div>
             ))}
@@ -112,7 +112,8 @@ const Airo = () => {
       
       {/* Footer */}
       <SocialLinks 
-        gradientColors="from-orange-500 to-orange-600"
+        gradientColors="from-orange-200 via-orange-300 to-yellow-200"
+        textColor="text-gray-800"
       />
     </div>
   );

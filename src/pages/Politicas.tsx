@@ -90,7 +90,10 @@ export default function Politicas() {
       </section>
 
       {/* Footer */}
-      <SocialLinks gradientColors="from-purple-500 to-pink-600" />
+      <SocialLinks 
+        gradientColors="from-purple-150 via-pink-150 to-purple-250" 
+        textColor="text-gray-700"
+      />
     </div>
   );
 }

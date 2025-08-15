@@ -13,7 +13,7 @@ export default function Contacto() {
   return (
     <div className="min-h-screen pt-24">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-green-50">
+      <section className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
         <div className="max-w-4xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -21,7 +21,7 @@ export default function Contacto() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
               Contáctanos
             </h1>
             <p className="text-xl text-gray-600 mb-8">
@@ -238,7 +238,10 @@ export default function Contacto() {
       </section>
 
       {/* Footer */}
-      <SocialLinks gradientColors="from-purple-500 to-pink-600" />
+      <SocialLinks 
+        gradientColors="from-purple-200 via-pink-200 to-purple-300" 
+        textColor="text-black"
+      />
     </div>
   );
 }

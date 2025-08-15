@@ -1,4 +1,4 @@
-import { FaWhatsapp, FaStar } from 'react-icons/fa';
+import { FaWhatsapp, FaStar, FaCheckCircle } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import SocialLinks from "../components/SocialLinks";
 
@@ -75,7 +75,7 @@ const Nitrox = () => {
           <div className="grid md:grid-cols-3 gap-6">
             {["Mejora el rendimiento físico y mental", "Acelera la recuperación muscular", "Optimiza la concentración y enfoque", "Aumenta la resistencia y stamina", "Reduce la fatiga y el cansancio", "Ideal para deportistas y profesionales"].map((beneficio, index) => (
               <div key={index} className="flex items-center gap-4 bg-red-50 p-4 rounded-lg shadow">
-                <span className="text-red-500 text-xl">✔</span>
+                <FaCheckCircle className="text-red-500 text-xl flex-shrink-0" />
                 <p className="text-gray-700">{beneficio}</p>
               </div>
             ))}
@@ -101,7 +101,8 @@ const Nitrox = () => {
       
       {/* Footer */}
       <SocialLinks 
-        gradientColors="from-red-500 to-red-600"
+        gradientColors="from-red-200 via-rose-300 to-pink-200"
+        textColor="text-gray-800"
       />
     </div>
   );
