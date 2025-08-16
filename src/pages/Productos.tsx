@@ -84,7 +84,7 @@ export default function Productos() {
 	return (
 		<div className="min-h-screen pt-24">
 			{/* Hero Section */}
-			<section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+			<section className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
 				<div className="max-w-6xl mx-auto px-4">
 					<motion.div
 						initial={{ opacity: 0, y: 30 }}
@@ -92,7 +92,7 @@ export default function Productos() {
 						transition={{ duration: 0.8 }}
 						className="text-center mb-16"
 					>
-						<h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+						<h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
 							Nuestros Productos
 						</h1>
 						<p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -104,7 +104,7 @@ export default function Productos() {
 			</section>
 
 			{/* Products Showcase */}
-			<section className="py-20 bg-white">
+			<section className="py-20 bg-gradient-to-br from-white via-purple-50/30 to-pink-50/30">
 				<div className="max-w-6xl mx-auto px-4">
 					{/* Custom Product Showcase */}
 					<div className="relative max-w-4xl mx-auto">
@@ -115,11 +115,11 @@ export default function Productos() {
 								animate={{ opacity: 1, x: 0 }}
 								exit={{ opacity: 0, x: -100 }}
 								transition={{ duration: 0.5 }}
-								className="card h-full relative overflow-hidden group"
+								className="card h-full relative overflow-hidden group bg-white/80 backdrop-blur-sm border border-purple-100 shadow-xl"
 							>
 								{/* Gradient Background */}
 								<div
-									className={`absolute inset-0 ${productos[currentProduct].color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}
+									className={`absolute inset-0 ${productos[currentProduct].color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`}
 								></div>
 
 								<div className="relative z-10">
@@ -199,10 +199,10 @@ export default function Productos() {
 								<button
 									key={index}
 									onClick={() => setCurrentProduct(index)}
-									className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+									className={`w-3 h-3 rounded-full transition-all duration-300 ${
 										index === currentProduct
-											? "bg-purple-600"
-											: "bg-gray-300"
+											? "bg-gradient-to-r from-purple-500 to-pink-500 scale-125"
+											: "bg-gray-300 hover:bg-gray-400"
 									}`}
 								/>
 							))}
@@ -215,24 +215,24 @@ export default function Productos() {
 									(prev) => (prev - 1 + productos.length) % productos.length
 								)
 							}
-							className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors"
+							className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg hover:bg-gradient-to-r hover:from-purple-100 hover:to-pink-100 transition-all duration-300 border border-purple-200"
 						>
-							<FaChevronLeft className="text-gray-600" />
+							<FaChevronLeft className="text-purple-600" />
 						</button>
 						<button
 							onClick={() =>
 								setCurrentProduct((prev) => (prev + 1) % productos.length)
 							}
-							className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors"
+							className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg hover:bg-gradient-to-r hover:from-purple-100 hover:to-pink-100 transition-all duration-300 border border-purple-200"
 						>
-							<FaChevronRight className="text-gray-600" />
+							<FaChevronRight className="text-purple-600" />
 						</button>
 					</div>
 				</div>
 			</section>
 
 			{/* Product Grid */}
-			<section className="py-20 bg-gray-50">
+			<section className="py-20 bg-gradient-to-br from-purple-50/60 to-pink-50/60">
 				<div className="max-w-6xl mx-auto px-4">
 					<motion.div
 						initial={{ opacity: 0, y: 30 }}
@@ -241,7 +241,7 @@ export default function Productos() {
 						viewport={{ once: true }}
 						className="text-center mb-16"
 					>
-						<h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
+						<h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
 							Nuestros Productos
 						</h2>
 						<p className="text-xl text-gray-600">
@@ -249,23 +249,26 @@ export default function Productos() {
 						</p>
 					</motion.div>
 
-					<div className="grid grid-cols-3 gap-8">
+					<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 						{productos.map((producto, index) => (
 							<motion.div
 								key={index}
 								initial={{ scale: 0.9, opacity: 0 }}
 								whileInView={{ scale: 1, opacity: 1 }}
-								transition={{ duration: 0.5 }}
-								className="flex justify-center items-center"
+								transition={{ duration: 0.5, delay: index * 0.1 }}
+								viewport={{ once: true }}
+								className="flex flex-col items-center group"
 							>
 								{/* Agregar fondo dinámico basado en el color de cada producto */}
 								<div
-									className={`w-52 h-52 mx-auto ${producto.color} rounded-full flex items-center justify-center mb-8 shadow-2xl`}
+									className={`w-52 h-52 mx-auto ${producto.color} rounded-full flex items-center justify-center mb-6 shadow-2xl group-hover:scale-105 transition-transform duration-300 relative overflow-hidden`}
 								>
+									{/* Subtle overlay for better contrast */}
+									<div className="absolute inset-0 bg-white/10 backdrop-blur-[1px]"></div>
 									<img
 										src={producto.image}
 										alt={producto.name}
-										className="w-44 h-44 object-contain"
+										className="w-44 h-44 object-contain relative z-10 group-hover:scale-110 transition-transform duration-300"
 										onError={(e) => {
 											e.currentTarget.style.display = "none";
 											const fallback =
@@ -275,11 +278,30 @@ export default function Productos() {
 											}
 										}}
 									/>
-									<div className="hidden w-44 h-44 bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg items-center justify-center">
+									<div className="hidden w-44 h-44 bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg items-center justify-center relative z-10">
 										<span className="text-6xl font-bold text-gray-600">
 											{producto.name[0]}
 										</span>
 									</div>
+								</div>
+								
+								{/* Product Info */}
+								<div className="text-center">
+									<h3 className="text-2xl font-bold text-gray-800 mb-2">
+										{producto.name}
+									</h3>
+									<p className="text-gray-600 mb-4 max-w-xs">
+										{producto.description.substring(0, 80)}...
+									</p>
+									<div className={`text-2xl font-bold bg-gradient-to-r ${producto.color} bg-clip-text text-transparent mb-4`}>
+										{producto.price}
+									</div>
+									<Link
+										to={producto.path}
+										className={`inline-block px-6 py-2 bg-gradient-to-r ${producto.color} text-white font-semibold rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300`}
+									>
+										Ver Detalles
+									</Link>
 								</div>
 							</motion.div>
 						))}

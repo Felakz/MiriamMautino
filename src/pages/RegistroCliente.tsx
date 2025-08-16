@@ -21,26 +21,77 @@ export default function RegistroCliente() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    const whatsappMessage = `
-🆕 NUEVO REGISTRO DE CLIENTE 🆕
+    // Validar campos requeridos
+    if (!formData.nombre.trim() || !formData.telefono.trim()) {
+      alert("Por favor completa los campos requeridos (Nombre y Teléfono)");
+      return;
+    }
 
-👤 Nombre: ${formData.nombre}
-📱 Teléfono: ${formData.telefono}
-📧 Email: ${formData.email}
-📍 Ciudad: ${formData.ciudad}
-🎯 Interés: ${formData.interes}
+    const whatsappMessage = `🆕 NUEVO REGISTRO DE CLIENTE 🆕
 
-💬 Mensaje:
+👤 *Nombre:* ${formData.nombre}
+📱 *Teléfono:* ${formData.telefono}
+📧 *Email:* ${formData.email || "No proporcionado"}
+📍 *Ciudad:* ${formData.ciudad || "No especificada"}
+🎯 *Interés:* ${formData.interes || "Por definir"}
+
+💬 *Mensaje:*
 ${formData.mensaje || "Sin mensaje adicional"}
 
-¡Gracias por registrarte! Me pondré en contacto contigo pronto.
-    `.trim();
+¡Gracias por registrarte! Me pondré en contacto contigo pronto.`;
 
-    const url = `https://wa.me/51900653836?text=${encodeURIComponent(whatsappMessage)}`;
-    window.open(url, "_blank");
+    // Enviar mensaje directo por WhatsApp
+    const numeroWhatsApp = "51900653836";
+    const mensajeCodificado = encodeURIComponent(whatsappMessage);
+    
+    // Detectar si es móvil o desktop para usar la URL correcta
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    let whatsappURL;
+    if (isMobile) {
+      // Para móviles usa la app nativa
+      whatsappURL = `whatsapp://send?phone=${numeroWhatsApp}&text=${mensajeCodificado}`;
+    } else {
+      // Para desktop usa WhatsApp Web
+      whatsappURL = `https://web.whatsapp.com/send?phone=${numeroWhatsApp}&text=${mensajeCodificado}`;
+    }
+    
+    try {
+      // Mostrar mensaje de éxito
+      alert("¡Registro procesado exitosamente! Se abrirá WhatsApp con tu mensaje prellenado. Solo debes presionar ENVIAR.");
+      
+      // Abrir WhatsApp en nueva ventana
+      const ventana = window.open(whatsappURL, '_blank');
+      
+      // Si no se pudo abrir la ventana, intentar con la URL alternativa
+      if (!ventana) {
+        window.location.href = whatsappURL;
+      }
+      
+      // Limpiar formulario después de enviar
+      setTimeout(() => {
+        setFormData({
+          nombre: "",
+          telefono: "",
+          email: "",
+          ciudad: "",
+          interes: "",
+          mensaje: ""
+        });
+      }, 2000);
+      
+    } catch (error) {
+      console.error("Error al abrir WhatsApp:", error);
+      // Fallback: copiar mensaje al portapapeles
+      navigator.clipboard.writeText(whatsappMessage).then(() => {
+        alert(`No se pudo abrir WhatsApp automáticamente. Se ha copiado tu mensaje al portapapeles. Pégalo manualmente en WhatsApp al número: +${numeroWhatsApp}`);
+      }).catch(() => {
+        alert(`Error al procesar el registro. Por favor contacta directamente al WhatsApp: +${numeroWhatsApp}`);
+      });
+    }
   };
 
   const productosInteres = [
@@ -58,8 +109,7 @@ ${formData.mensaje || "Sin mensaje adicional"}
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
-        >
+          className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
             Registro de Cliente
           </h1>

@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
+import { FaBars, FaTimes, FaFlask, FaMagic, FaGem, FaFire, FaStar, FaChevronDown } from 'react-icons/fa';
 
 
 const navLinks = [
@@ -26,12 +26,17 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [prodOpen, setProdOpen] = useState(false);
   const [regOpen, setRegOpen] = useState(false);
+  const [mobileProdOpen, setMobileProdOpen] = useState(false);
+  const [mobileRegOpen, setMobileRegOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const navRef = useRef<HTMLElement>(null);
 
   // Función para cerrar todos los menús
   const closeAllMenus = () => {
     setProdOpen(false);
     setRegOpen(false);
+    setMobileProdOpen(false);
+    setMobileRegOpen(false);
   };
 
   // Manejar clics fuera del navbar para cerrar menús
@@ -45,6 +50,29 @@ export default function Navbar() {
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  // Manejar scroll y timeout para cambiar transparencia
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    // Cambiar a opaco después de 3 segundos automáticamente
+    const timer = setTimeout(() => {
+      setIsScrolled(true);
+    }, 3000);
+
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timer);
     };
   }, []);
 
@@ -66,10 +94,14 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-lg border-b border-gray-100"
+      className={`fixed w-full z-50 transition-all duration-500 shadow-lg border-b border-gray-100 ${
+        isScrolled 
+          ? 'bg-white/90 backdrop-blur-md' 
+          : 'bg-transparent backdrop-blur-none'
+      }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-4">
-        <Link to="/" className="text-xl font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
+        <Link to="/" className="text-xl font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent transition-all duration-300">
           MM Bienestar & Emprendimiento
         </Link>
         
@@ -80,7 +112,11 @@ export default function Navbar() {
               key={link.name} 
               to={link.path} 
               className={({ isActive }) =>
-                `navbar-link ${isActive ? 'text-blue-600 border-b-2 border-blue-600' : ''}`
+                `navbar-link transition-all duration-300 ${
+                  isActive ? 'text-blue-600 border-b-2 border-blue-600' : ''
+                } ${
+                  isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-gray-900 hover:text-blue-600 font-medium'
+                }`
               }
             >
               {link.name}
@@ -91,7 +127,9 @@ export default function Navbar() {
           <div className="relative">
             <button
               onClick={handleProductsToggle}
-              className="navbar-link flex items-center gap-1"
+              className={`navbar-link flex items-center gap-1 transition-all duration-300 ${
+                isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-gray-900 hover:text-blue-600 font-medium'
+              }`}
               onMouseEnter={() => {
                 setRegOpen(false);
                 setProdOpen(true);
@@ -106,7 +144,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -10, scale: 0.95 }}
                   transition={{ duration: 0.2 }}
-                  className="absolute left-0 mt-2 bg-white rounded-xl shadow-xl py-2 w-56 border border-gray-100"
+                  className="absolute left-0 mt-2 bg-white rounded-xl shadow-xl py-2 min-w-max whitespace-nowrap border border-gray-100 z-50"
                   onMouseLeave={() => setProdOpen(false)}
                 >
                   {productLinks.map(prod => (
@@ -136,7 +174,9 @@ export default function Navbar() {
           <div className="relative">
             <button
               onClick={handleRegistroToggle}
-              className="navbar-link flex items-center gap-1"
+              className={`navbar-link flex items-center gap-1 transition-all duration-300 ${
+                isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-gray-900 hover:text-blue-600 font-medium'
+              }`}
               onMouseEnter={() => {
                 setProdOpen(false);
                 setRegOpen(true);
@@ -151,7 +191,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   exit={{ opacity: 0, y: -10, scale: 0.95 }}
                   transition={{ duration: 0.2 }}
-                  className="absolute left-0 mt-2 bg-white rounded-xl shadow-xl py-2 w-64 border border-gray-100"
+                  className="absolute right-0 mt-2 bg-white rounded-xl shadow-xl py-2 min-w-max whitespace-nowrap border border-gray-100 z-50"
                   onMouseLeave={() => setRegOpen(false)}
                 >
                   {registroLinks.map(link => (
@@ -172,7 +212,11 @@ export default function Navbar() {
         
         {/* Mobile menu button */}
         <button 
-          className="md:hidden text-2xl p-2 rounded-lg hover:bg-gray-100 transition-colors"
+          className={`md:hidden text-2xl p-2 rounded-lg transition-all duration-300 ${
+            isScrolled 
+              ? 'text-gray-700 hover:bg-gray-100' 
+              : 'text-gray-900 hover:bg-gray-100/20'
+          }`}
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <FaTimes /> : <FaBars />}
@@ -183,70 +227,99 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            transition={{ type: "spring", damping: 30, stiffness: 300 }}
-            className="fixed top-0 right-0 w-80 h-full bg-white shadow-2xl z-50 flex flex-col p-6 overflow-y-auto"
+            initial={{ y: "-100%", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: "-100%", opacity: 0 }}
+            transition={{ type: "spring", damping: 25, stiffness: 200, duration: 0.4 }}
+            className="absolute top-full left-0 w-full bg-white shadow-2xl z-50 border-t border-gray-100 max-h-[80vh] overflow-y-auto"
           >
-            <div className="flex justify-between items-center mb-8">
-              <h2 className="text-xl font-bold text-gray-800">Menú</h2>
-              <button 
-                onClick={() => setMenuOpen(false)}
-                className="text-2xl p-2 rounded-lg hover:bg-gray-100 transition-colors"
-              >
-                <FaTimes />
-              </button>
-            </div>
-            
-            <div className="space-y-6">
-              {navLinks.map(link => (
-                <NavLink 
-                  key={link.name} 
-                  to={link.path} 
-                  className="block py-3 text-lg font-medium border-b border-gray-100" 
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {link.name}
-                </NavLink>
-              ))}
-              
-              <div>
-                <h3 className="font-semibold text-gray-800 mb-3 text-lg">Productos</h3>
-                <div className="space-y-2 ml-4">
-                  {productLinks.map(prod => (
-                    <NavLink 
-                      key={prod.name} 
-                      to={prod.path} 
-                      className="flex items-center gap-3 py-2 font-medium"
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      {prod.icon} {prod.name}
-                    </NavLink>
-                  ))}
+            <div className="p-6">
+              <div className="space-y-6">
+                {/* Enlaces de navegación básicos */}
+                {navLinks.map(link => (
                   <NavLink 
-                    to="/productos" 
-                    className="block py-2 font-medium text-blue-600"
+                    key={link.name} 
+                    to={link.path} 
+                    className="block py-3 font-semibold text-gray-800 text-lg border-b border-gray-200 pb-2 hover:text-purple-600 transition-colors" 
                     onClick={() => setMenuOpen(false)}
                   >
-                    Ver Todos
+                    {link.name}
                   </NavLink>
+                ))}
+                
+                <div>
+                  <button
+                    onClick={() => setMobileProdOpen(!mobileProdOpen)}
+                    className="w-full flex items-center justify-between font-semibold text-gray-800 text-lg border-b border-gray-200 pb-2 hover:text-purple-600 transition-colors"
+                  >
+                    <span>Productos</span>
+                    <FaChevronDown className={`text-sm transition-transform duration-200 ${mobileProdOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  <AnimatePresence>
+                    {mobileProdOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="space-y-2 ml-4 mt-3">
+                          {productLinks.map(prod => (
+                            <NavLink 
+                              key={prod.name} 
+                              to={prod.path} 
+                              className="flex items-center gap-3 py-3 font-medium hover:bg-purple-50 -ml-4 pl-4 rounded-lg transition-colors"
+                              onClick={() => setMenuOpen(false)}
+                            >
+                              {prod.icon} {prod.name}
+                            </NavLink>
+                          ))}
+                          <NavLink 
+                            to="/productos" 
+                            className="block py-3 font-medium text-purple-600 hover:bg-purple-50 -ml-4 pl-4 rounded-lg transition-colors"
+                            onClick={() => setMenuOpen(false)}
+                          >
+                            Ver Todos los Productos
+                          </NavLink>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
-              </div>
-              
-              <div>
-                <h3 className="font-semibold text-gray-800 mb-3 text-lg">Registro</h3>
-                <div className="space-y-2 ml-4">
-                  {registroLinks.map(link => (
-                    <NavLink 
-                      key={link.name} 
-                      to={link.path} 
-                      className="block py-2 font-medium"
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      {link.name}
-                    </NavLink>
-                  ))}
+                
+                <div>
+                  <button
+                    onClick={() => setMobileRegOpen(!mobileRegOpen)}
+                    className="w-full flex items-center justify-between font-semibold text-gray-800 text-lg border-b border-gray-200 pb-2 hover:text-purple-600 transition-colors"
+                  >
+                    <span>Registro</span>
+                    <FaChevronDown className={`text-sm transition-transform duration-200 ${mobileRegOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  <AnimatePresence>
+                    {mobileRegOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="space-y-2 ml-4 mt-3">
+                          {registroLinks.map(link => (
+                            <NavLink 
+                              key={link.name} 
+                              to={link.path} 
+                              className="block py-3 font-medium hover:bg-purple-50 -ml-4 pl-4 rounded-lg transition-colors"
+                              onClick={() => setMenuOpen(false)}
+                            >
+                              {link.name}
+                            </NavLink>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               </div>
             </div>
@@ -261,8 +334,10 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 z-40 md:hidden"
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 bg-black/30 z-40 md:hidden backdrop-blur-sm"
             onClick={() => setMenuOpen(false)}
+            style={{ top: '80px' }} // Empieza después del navbar
           />
         )}
       </AnimatePresence>

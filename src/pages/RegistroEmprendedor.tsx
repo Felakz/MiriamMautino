@@ -23,28 +23,81 @@ export default function RegistroEmprendedor() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    const whatsappMessage = `
-🚀 NUEVO REGISTRO DE EMPRENDEDOR 🚀
+    // Validar campos requeridos
+    if (!formData.nombre.trim() || !formData.telefono.trim() || !formData.email.trim() || !formData.ciudad.trim()) {
+      alert("Por favor completa todos los campos requeridos (Nombre, Teléfono, Email y Ciudad)");
+      return;
+    }
 
-👤 Nombre: ${formData.nombre}
-📱 Teléfono: ${formData.telefono}
-📧 Email: ${formData.email}
-📍 Ciudad: ${formData.ciudad}
-💼 Experiencia en Ventas: ${formData.experiencia}
-🎯 Motivo para Emprender: ${formData.motivo}
-⏰ Horario Disponible: ${formData.horarioDisponible}
+    const whatsappMessage = `🚀 NUEVO REGISTRO DE EMPRENDEDOR 🚀
 
-💬 Mensaje adicional:
+👤 *Nombre:* ${formData.nombre}
+📱 *Teléfono:* ${formData.telefono}
+📧 *Email:* ${formData.email}
+📍 *Ciudad:* ${formData.ciudad}
+💼 *Experiencia en Ventas:* ${formData.experiencia || "No especificada"}
+🎯 *Motivo para Emprender:* ${formData.motivo || "Por definir"}
+⏰ *Horario Disponible:* ${formData.horarioDisponible || "Por coordinar"}
+
+💬 *Mensaje adicional:*
 ${formData.mensaje || "Sin mensaje adicional"}
 
-¡Excelente! Pronto me pondré en contacto para explicarte todo sobre nuestra oportunidad de negocio.
-    `.trim();
+¡Excelente! Pronto me pondré en contacto para explicarte todo sobre nuestra oportunidad de negocio.`;
 
-    const url = `https://wa.me/51900653836?text=${encodeURIComponent(whatsappMessage)}`;
-    window.open(url, "_blank");
+    // Enviar mensaje directo por WhatsApp
+    const numeroWhatsApp = "51900653836";
+    const mensajeCodificado = encodeURIComponent(whatsappMessage);
+    
+    // Detectar si es móvil o desktop para usar la URL correcta
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    let whatsappURL;
+    if (isMobile) {
+      // Para móviles usa la app nativa
+      whatsappURL = `whatsapp://send?phone=${numeroWhatsApp}&text=${mensajeCodificado}`;
+    } else {
+      // Para desktop usa WhatsApp Web
+      whatsappURL = `https://web.whatsapp.com/send?phone=${numeroWhatsApp}&text=${mensajeCodificado}`;
+    }
+    
+    try {
+      // Mostrar mensaje de éxito
+      alert("¡Solicitud procesada exitosamente! Se abrirá WhatsApp con tu mensaje prellenado. Solo debes presionar ENVIAR.");
+      
+      // Abrir WhatsApp en nueva ventana
+      const ventana = window.open(whatsappURL, '_blank');
+      
+      // Si no se pudo abrir la ventana, intentar con la URL alternativa
+      if (!ventana) {
+        window.location.href = whatsappURL;
+      }
+      
+      // Limpiar formulario después de enviar
+      setTimeout(() => {
+        setFormData({
+          nombre: "",
+          telefono: "",
+          email: "",
+          ciudad: "",
+          experiencia: "",
+          motivo: "",
+          horarioDisponible: "",
+          mensaje: ""
+        });
+      }, 2000);
+      
+    } catch (error) {
+      console.error("Error al abrir WhatsApp:", error);
+      // Fallback: copiar mensaje al portapapeles
+      navigator.clipboard.writeText(whatsappMessage).then(() => {
+        alert(`No se pudo abrir WhatsApp automáticamente. Se ha copiado tu mensaje al portapapeles. Pégalo manualmente en WhatsApp al número: +${numeroWhatsApp}`);
+      }).catch(() => {
+        alert(`Error al procesar la solicitud. Por favor contacta directamente al WhatsApp: +${numeroWhatsApp}`);
+      });
+    }
   };
 
   const experienciaOptions = [

@@ -25,7 +25,7 @@ export default function Preguntas() {
     },
     {
       question: "¿Cómo puedo convertirme en emprendedora con ustedes?",
-      answer: "¡Nos encanta que preguntes! Tenemos un programa de emprendimiento diseñado especialmente para madres. Puedes contactarnos por WhatsApp y te explicaremos todo sobre cómo puedes comenzar tu propio negocio con nosotros."
+      answer: "¡Nos encanta que preguntes! Tenemos un programa de emprendimiento diseñado especialmente para madres y público en general. Puedes contactarnos por WhatsApp y te explicaremos todo sobre cómo puedes comenzar tu propio negocio con nosotros."
     },
     {
       question: "¿Realizan entregas a todo el país?",
