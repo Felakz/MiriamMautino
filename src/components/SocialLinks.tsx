@@ -1,3 +1,10 @@
+/**
+ * © 2025 Miriam Mautino - MM Bienestar & Emprendimiento
+ * Código protegido por derechos de autor.
+ * Prohibida la copia, distribución o uso comercial sin autorización.
+ * Contacto legal: +51 900 653 836
+ */
+
 import { FaFacebook, FaInstagram, FaYoutube, FaTiktok } from "react-icons/fa";
 
 interface SocialLinksProps {
@@ -116,6 +123,9 @@ const SocialLinks = ({
         </p>
         <p className="text-xs opacity-60 mt-1">
           Productos naturales para tu bienestar integral ✨
+        </p>
+        <p className="text-xs opacity-50 mt-2">
+          🔒 Sitio web protegido por derechos de autor. Prohibida la copia, distribución o uso comercial sin autorización expresa.
         </p>
       </div>
     </footer>

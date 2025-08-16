@@ -1,7 +1,16 @@
 {
-  "name": "mi-landing",
+  "name": "mm-bienestar-emprendimiento",
+  "description": "Sitio web oficial de MM Bienestar & Emprendimiento - Productos ACTIVZ",
+  "version": "1.0.0",
+  "author": "Miriam Mautino <contacto@mm-bienestar.com>",
+  "copyright": "© 2025 Miriam Mautino - MM Bienestar & Emprendimiento. Todos los derechos reservados.",
+  "license": "PROPRIETARY - Ver LICENSE para términos",
+  "homepage": "https://miriam-mautino.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Felakz/MiriamMautino.git"
+  },
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -1,3 +1,23 @@
+/**
+ * ========================================
+ * 🔐 COPYRIGHT NOTICE
+ * ========================================
+ * 
+ * © 2025 Miriam Mautino - MM Bienestar & Emprendimiento
+ * Todos los derechos reservados.
+ * 
+ * PROHIBIDO:
+ * - Copia, distribución o modificación sin autorización
+ * - Uso comercial sin licencia expresa
+ * - Ingeniería inversa del código fuente
+ * 
+ * CONTACTO LEGAL: +51 900 653 836
+ * WEBSITE: https://miriam-mautino.vercel.app
+ * 
+ * Las violaciones pueden resultar en acciones legales.
+ * ========================================
+ */
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import AnimatedBackground from "./components/AnimatedBackground";

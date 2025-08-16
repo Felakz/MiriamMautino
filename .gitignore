@@ -1,3 +1,8 @@
+# ===========================================
+# 🔒 ARCHIVOS PROTEGIDOS POR COPYRIGHT
+# © 2025 Miriam Mautino - MM Bienestar
+# ===========================================
+
 # Logs
 logs
 *.log
@@ -22,3 +27,37 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# ===========================================
+# 🔐 ARCHIVOS SENSIBLES Y CONFIGURACIONES
+# ===========================================
+
+# Variables de entorno sensibles
+.env
+.env.local
+.env.production
+.env.development
+
+# Configuraciones secretas
+config/secrets.js
+config/keys.js
+src/config/private.js
+
+# Archivos de respaldo
+*.backup
+*.bak
+*.tmp
+
+# Archivos de desarrollo personal
+TODO.md
+NOTES.md
+dev-notes/
+
+# Certificados y llaves
+*.pem
+*.key
+*.cert
+
+# ===========================================
+# COPYRIGHT NOTICE END
+# ===========================================

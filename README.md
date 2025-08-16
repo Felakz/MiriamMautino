@@ -1,69 +1,88 @@
-# React + TypeScript + Vite
+# 🌟 MM Bienestar & Emprendimiento - Sitio Web Oficial
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Sitio web profesional para productos de bienestar natural ACTIVZ**
 
-Currently, two official plugins are available:
+## 🔒 **AVISO DE COPYRIGHT**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```
+© 2025 Miriam Mautino - MM Bienestar & Emprendimiento
+TODOS LOS DERECHOS RESERVADOS
 
-## Expanding the ESLint configuration
+⚠️  PROHIBIDO:
+    ❌ Copia del código fuente
+    ❌ Distribución no autorizada  
+    ❌ Uso comercial sin licencia
+    ❌ Modificación y redistribución
+    ❌ Ingeniería reversa
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+✅  PERMITIDO:
+    ✅ Visualización como usuario final
+    ✅ Navegación normal del sitio
+    ✅ Contacto comercial autorizado
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+📧  CONTACTO LEGAL: +51 900 653 836
+🌐  SITIO WEB: https://miriam-mautino.vercel.app
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 **CARACTERÍSTICAS DEL SITIO**
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### **✨ Funcionalidades Principales:**
+- 🎨 **Diseño Moderno**: Interface elegante y responsive
+- 📱 **Mobile First**: Optimizado para dispositivos móviles  
+- 🔗 **WhatsApp Integrado**: Contacto directo con clientes
+- 📊 **Google Analytics**: Seguimiento profesional de métricas
+- 🎭 **Animaciones Suaves**: Experiencia de usuario premium
+- 🛡️ **SEO Optimizado**: Posicionamiento en buscadores
+
+### **🧪 Productos ACTIVZ:**
+- **LINQ**: Fórmula epigenética para salud integral
+- **GNM-X**: Activador Nrf2 más potente del mercado
+- **OPTIMEND**: Tecnología avanzada para salud articular
+- **AIRO**: Bienestar respiratorio natural
+- **NITROX**: Optimizador de flujo sanguíneo
+
+---
+
+## 🛠️ **TECNOLOGÍAS UTILIZADAS**
+
+- ⚛️ **React 18** + TypeScript
+- 🎨 **Tailwind CSS** para estilos
+- 🎭 **Framer Motion** para animaciones
+- 📡 **React Router** para navegación
+- 📊 **Google Analytics 4** integrado
+- ☁️ **Vercel** para deployment
+
+---
+
+## ⚖️ **TÉRMINOS LEGALES**
+
+Este código fuente está protegido por leyes de derechos de autor peruanas e internacionales.
+
+### **🚫 Violaciones pueden resultar en:**
+- 💰 Acciones legales por daños y perjuicios
+- 🚫 Órdenes judiciales de cese y desista
+- 💸 Compensación monetaria por uso indebido
+
+### **📞 Para consultas legales o licencias:**
+- **WhatsApp**: +51 900 653 836
+- **Email**: [Insertar email de contacto]
+- **Sitio**: https://miriam-mautino.vercel.app
+
+---
+
+## 📅 **INFORMACIÓN DE VERSIÓN**
+
+- **Creación**: Agosto 2025
+- **Última actualización**: 16 de agosto de 2025
+- **Versión**: 1.0.0
+- **Estado**: Producción activa
+
+---
+
+**⚠️ IMPORTANTE**: Este README constituye un aviso legal formal. El acceso al código no implica autorización para su uso, copia o distribución.
+
+---
+
+*Desarrollado con ❤️ para MM Bienestar & Emprendimiento*

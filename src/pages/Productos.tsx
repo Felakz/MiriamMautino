@@ -1,3 +1,8 @@
+/**
+ * © 2025 Miriam Mautino - MM Bienestar & Emprendimiento
+ * Código protegido por derechos de autor. Prohibida la copia sin autorización.
+ */
+
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useState } from "react";

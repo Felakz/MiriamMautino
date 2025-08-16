@@ -1,3 +1,10 @@
+/**
+ * © 2025 Miriam Mautino - MM Bienestar & Emprendimiento
+ * Código protegido por derechos de autor.
+ * Prohibida la copia, distribución o uso comercial sin autorización.
+ * Contacto legal: +51 900 653 836
+ */
+
 import { Link, NavLink } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
