@@ -10,21 +10,21 @@ export default function Optimend() {
   };
 
   const benefits = [
-    "Potencia la memoria y el aprendizaje",
-    "Aumenta la concentración y claridad mental",
-    "Reduce el estrés y la ansiedad",
-    "Mejora la función cognitiva general",
-    "Protege contra el deterioro mental",
-    "Optimiza el rendimiento cerebral"
+    "Inflamación equilibrada y respuesta saludable",
+    "Alivia dolores menores y molestias comunes",
+    "Mejora la movilidad articular y flexibilidad",
+    "Más eficacia que la cúrcuma estándar",
+    "Opción más segura que antiinflamatorios comunes",
+    "Complemento ideal dentro del 'health mesh' ACTIVZ"
   ];
 
   const ingredients = [
-    "Lion's Mane Mushroom",
-    "Bacopa Monnieri",
-    "Omega-3 DHA",
-    "Fosfatidilserina",
-    "Vitamina D3",
-    "Acetil L-Carnitina"
+    "Cúrcuma y Curcumina (medicina ayurvédica)",
+    "Boswellia (conocimiento ancestral)",
+    "Tetrahidrocurcumina (metabolito especial)",
+    "Tecnología CyLoc™ (jaula molecular)",
+    "Tecnología DexKey™ (liberación precisa)",
+    "Sistema de absorción maximizada"
   ];
 
   return (
@@ -42,7 +42,7 @@ export default function Optimend() {
                 Optimend
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                El revolucionario suplemento nootrópico que desbloquea todo el potencial de tu mente. Mejora tu capacidad cognitiva y claridad mental como nunca antes.
+                Fórmula avanzada con tecnología patent pending para apoyar inflamación saludable, reducir molestias y promover mejor movilidad articular y flexibilidad.
               </p>
               <div className="flex items-center gap-2 mb-8">
                 {[...Array(5)].map((_, i) => (
@@ -95,8 +95,8 @@ export default function Optimend() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-6 text-gray-800">Beneficios de Optimend</h2>
-            <p className="text-xl text-gray-600">Desbloquea todo el potencial de tu mente</p>
+            <h2 className="text-4xl font-bold mb-6 text-gray-800">¿Qué es ACTIVZ OPTIMEND?</h2>
+            <p className="text-xl text-gray-600">Fórmula avanzada que combina medicina ayurvédica con tecnologías innovadoras</p>
           </motion.div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -117,6 +117,108 @@ export default function Optimend() {
         </div>
       </section>
 
+      {/* Detailed Benefits Section */}
+      <section className="py-20 bg-purple-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-6 text-gray-800">Principales Beneficios</h2>
+            <p className="text-xl text-gray-600">Descubre las ventajas únicas de OPTIMEND</p>
+          </motion.div>
+          
+          <div className="grid lg:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-xl shadow-lg"
+            >
+              <h3 className="text-2xl font-bold mb-4 text-purple-600">Inflamación Equilibrada</h3>
+              <p className="text-gray-700 mb-4">
+                Ayuda a mantener una respuesta inflamatoria saludable, promoviendo el equilibrio natural 
+                de tu cuerpo sin efectos secundarios adversos.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-xl shadow-lg"
+            >
+              <h3 className="text-2xl font-bold mb-4 text-purple-600">Alivia Dolores Menores</h3>
+              <p className="text-gray-700 mb-4">
+                Reduce molestias comunes, incluyendo las relacionadas con ejercicio o lesiones, 
+                ofreciendo alivio natural y efectivo.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-xl shadow-lg"
+            >
+              <h3 className="text-2xl font-bold mb-4 text-purple-600">Movilidad Articular</h3>
+              <p className="text-gray-700 mb-4">
+                Promueve mayor flexibilidad y movilidad en las articulaciones, mejorando tu 
+                calidad de vida y capacidad de movimiento.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-xl shadow-lg"
+            >
+              <h3 className="text-2xl font-bold mb-4 text-purple-600">Tecnología Avanzada</h3>
+              <p className="text-gray-700 mb-4">
+                Gracias a CyLoc™ + DexKey™, maximiza la absorción de ingredientes clave, 
+                siendo más eficaz que la cúrcuma estándar tradicional.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-xl shadow-lg"
+            >
+              <h3 className="text-2xl font-bold mb-4 text-purple-600">Opción Más Segura</h3>
+              <p className="text-gray-700 mb-4">
+                A diferencia de medicamentos convencionales, evita riesgos como problemas cardíacos, 
+                gastritis, adicción o complicaciones gastrointestinales.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-xl shadow-lg"
+            >
+              <h3 className="text-2xl font-bold mb-4 text-purple-600">Health Mesh ACTIVZ</h3>
+              <p className="text-gray-700 mb-4">
+                No reemplaza a GNM-X, sino que lo complementa perfectamente dentro del enfoque 
+                holístico de ACTIVZ para una salud celular óptima.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Ingredients Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
@@ -127,8 +229,8 @@ export default function Optimend() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-6 text-gray-800">Ingredientes Nootrópicos Premium</h2>
-            <p className="text-xl text-gray-600">Componentes respaldados por la neurociencia para optimizar tu cerebro</p>
+            <h2 className="text-4xl font-bold mb-6 text-gray-800">Tecnologías Innovadoras</h2>
+            <p className="text-xl text-gray-600">Combinación única de sabiduría ancestral con ciencia moderna avanzada</p>
           </motion.div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -23,11 +23,11 @@ const productos = [
 	{
 		name: "GNM-X",
 		description:
-			"Fórmula avanzada para potenciar el rendimiento físico y mental. Ideal para deportistas y profesionales.",
+			"El activador más potente de Nrf2 en el mercado. Regulador de expresión genética que genera cambios epigenéticos para una función celular óptima.",
 		benefits: [
-			"Mejora el rendimiento",
-			"Acelera la recuperación",
-			"Optimiza la concentración",
+			"Reduce estrés oxidativo y envejecimiento",
+			"Optimiza expresión genética (epigenética)",
+			"Activación robusta Nrf2 (10:1)",
 		],
 		price: "S/. 270",
 		image: "/GNM-X.png",
@@ -37,11 +37,11 @@ const productos = [
 	{
 		name: "Optimend",
 		description:
-			"Revolucionario suplemento nootrópico que mejora las funciones cognitivas y la claridad mental.",
+			"Fórmula avanzada con tecnología patent pending que combina medicina ayurvédica con innovaciones como CyLoc™ y DexKey™ para salud articular.",
 		benefits: [
-			"Potencia la memoria",
-			"Aumenta la concentración",
-			"Reduce el estrés mental",
+			"Inflamación equilibrada y saludable",
+			"Alivia dolores menores naturalmente",
+			"Mejora movilidad articular",
 		],
 		price: "S/. 300",
 		image: "/OPTIMEND.png",

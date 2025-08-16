@@ -10,21 +10,21 @@ export default function GNMX() {
   };
 
   const benefits = [
-    "Mejora el rendimiento físico y mental",
-    "Acelera la recuperación muscular",
-    "Optimiza la concentración y enfoque",
-    "Aumenta la resistencia y stamina",
-    "Reduce la fatiga y el cansancio",
-    "Ideal para deportistas y profesionales"
+    "Reducción del estrés oxidativo y envejecimiento celular",
+    "Optimización de la expresión génica (epigenética)",
+    "Protección prolongada de las funciones de Nrf2",
+    "Activación robusta de Nrf2 (proporción 10:1)",
+    "Combate efectos negativos del envejecimiento",
+    "Protección contra factores ambientales adversos"
   ];
 
   const ingredients = [
-    "Creatina Monohidrato",
-    "Beta-Alanina",
-    "L-Carnitina",
-    "Extracto de Rhodiola",
-    "Vitaminas del Complejo B",
-    "Taurina"
+    "Activador potente de proteína Nrf2",
+    "Reguladores de expresión genética",
+    "Moduladores epigenéticos celulares",
+    "Mecanismos antioxidantes naturales",
+    "Inhibidores de rutas de apagado intracelular",
+    "Protectores contra estrés oxidativo"
   ];
 
   return (
@@ -47,7 +47,7 @@ export default function GNMX() {
                 GNMX
               </motion.h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                La fórmula avanzada para potenciar tu rendimiento físico y mental. Diseñado especialmente para deportistas y profesionales que buscan excelencia.
+                El activador más potente de Nrf2 en el mercado. Formulado para regular la expresión genética y generar cambios epigenéticos que favorecen una función celular óptima.
               </p>
               <div className="flex items-center gap-2 mb-8">
                 {[...Array(5)].map((_, i) => (
@@ -100,8 +100,8 @@ export default function GNMX() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-6 text-gray-800">Beneficios de GNM-X</h2>
-            <p className="text-xl text-gray-600">Maximiza tu potencial físico y mental</p>
+            <h2 className="text-4xl font-bold mb-6 text-gray-800">¿Qué es GNM-X?</h2>
+            <p className="text-xl text-gray-600">El activador más potente de Nrf2 que regula la expresión genética para una función celular óptima</p>
           </motion.div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -122,6 +122,80 @@ export default function GNMX() {
         </div>
       </section>
 
+      {/* Detailed Benefits Section */}
+      <section className="py-20 bg-green-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-6 text-gray-800">Beneficios Principales</h2>
+            <p className="text-xl text-gray-600">Descubre cómo GNM-X transforma tu salud celular</p>
+          </motion.div>
+          
+          <div className="grid lg:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-xl shadow-lg"
+            >
+              <h3 className="text-2xl font-bold mb-4 text-green-600">Reducción del Estrés Oxidativo</h3>
+              <p className="text-gray-700 mb-4">
+                Activa mecanismos antioxidantes naturales para proteger tus células del envejecimiento 
+                celular y combate los efectos negativos de factores ambientales adversos.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-xl shadow-lg"
+            >
+              <h3 className="text-2xl font-bold mb-4 text-green-600">Optimización Genética</h3>
+              <p className="text-gray-700 mb-4">
+                Mediante influencias epigenéticas, ayuda a que tus genes funcionen mejor frente a 
+                factores externos adversos, regulando la expresión genética de manera óptima.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-xl shadow-lg"
+            >
+              <h3 className="text-2xl font-bold mb-4 text-green-600">Protección Prolongada Nrf2</h3>
+              <p className="text-gray-700 mb-4">
+                Inhibe rutas de apagado intracelular para que la proteína Nrf2 actúe más tiempo, 
+                proporcionando protección celular extendida y continua.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-xl shadow-lg"
+            >
+              <h3 className="text-2xl font-bold mb-4 text-green-600">Activación Robusta 10:1</h3>
+              <p className="text-gray-700 mb-4">
+                GNM-X activa Nrf2 en una proporción de 10:1 comparado con productos similares, 
+                ofreciendo la activación más potente disponible en el mercado.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Ingredients Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
@@ -132,8 +206,8 @@ export default function GNMX() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-6 text-gray-800">Ingredientes de Alto Rendimiento</h2>
-            <p className="text-xl text-gray-600">Componentes científicamente probados para máxima efectividad</p>
+            <h2 className="text-4xl font-bold mb-6 text-gray-800">Componentes Científicos</h2>
+            <p className="text-xl text-gray-600">Tecnología avanzada para activación celular y protección antioxidante</p>
           </motion.div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
