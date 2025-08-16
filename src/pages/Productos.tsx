@@ -9,11 +9,11 @@ const productos = [
 	{
 		name: "Linq",
 		description:
-			"Suplemento premium para el bienestar general. Formulado con ingredientes naturales de la más alta calidad.",
+			"Fórmula epigenética científica diseñada para apoyar múltiples sistemas del cuerpo. Mejora la función cerebral, optimiza la salud intestinal y fortalece el sistema inmunológico.",
 		benefits: [
-			"Aumenta la energía",
-			"Mejora el estado de ánimo",
-			"Fortalece el sistema inmune",
+			"Mejora función cerebral e intestinal",
+			"Optimiza absorción de nutrientes",
+			"Aumenta metabolismo y controla apetito",
 		],
 		price: "S/. 300",
 		image: "/LINQ.png",

@@ -10,21 +10,25 @@ export default function Linq() {
   };
 
   const benefits = [
-    "Aumenta los niveles de energía naturalmente",
-    "Mejora el estado de ánimo y reduce el estrés",
+    "Mejora la función cerebral y la conexión intestino-cerebro",
+    "Optimiza la salud intestinal y absorción de nutrientes",
+    "Aumenta el metabolismo y controla el apetito",
     "Fortalece el sistema inmunológico",
-    "Mejora la calidad del sueño",
-    "Apoya la función cognitiva",
-    "100% ingredientes naturales"
+    "Mejora la salud de la piel y estimula colágeno",
+    "Regula la inflamación y mejora el estado de ánimo",
+    "Potencia la producción de neurotransmisores",
+    "Aumenta el número de mitocondrias (energía celular)"
   ];
 
   const ingredients = [
-    "Extracto de Ginseng Coreano",
-    "Vitamina B12",
-    "Coenzima Q10",
-    "Extracto de Ginkgo Biloba",
-    "Magnesio",
-    "Zinc"
+    "Fórmula epigenética científica",
+    "Moduladores del gen MUC2 (barrera intestinal)",
+    "Estimuladores de neurotransmisores intestinales",
+    "Potenciadores mitocondriales",
+    "Reguladores de sensibilidad a la insulina",
+    "Moduladores del sistema inmune",
+    "Estimuladores de síntesis de colágeno",
+    "Reguladores de citocinas y células T"
   ];
 
   return (
@@ -42,7 +46,7 @@ export default function Linq() {
                 Linq
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                El suplemento premium que revoluciona tu bienestar. Formulado con ingredientes naturales de la más alta calidad para darte la energía y vitalidad que necesitas.
+                Fórmula epigenética científica diseñada para apoyar múltiples sistemas del cuerpo. Mejora la función cerebral, optimiza la salud intestinal, aumenta el metabolismo y fortalece el sistema inmunológico.
               </p>
               <div className="flex items-center gap-2 mb-8">
                 {[...Array(5)].map((_, i) => (
@@ -100,8 +104,8 @@ export default function Linq() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-6 text-gray-800">Beneficios de Linq</h2>
-            <p className="text-xl text-gray-600">Descubre cómo Linq puede transformar tu vida diaria</p>
+            <h2 className="text-4xl font-bold mb-6 text-gray-800">¿Qué es ACTIVZ LINQ?</h2>
+            <p className="text-xl text-gray-600">LINQ es una fórmula epigenética científica diseñada para apoyar múltiples sistemas del cuerpo</p>
           </motion.div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -122,6 +126,107 @@ export default function Linq() {
         </div>
       </section>
 
+      {/* Detailed Benefits Section */}
+      <section className="py-20 bg-yellow-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-6 text-gray-800">Beneficios Destacados</h2>
+            <p className="text-xl text-gray-600">Conoce en detalle cómo LINQ transforma tu salud</p>
+          </motion.div>
+          
+          <div className="grid lg:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-xl shadow-lg"
+            >
+              <h3 className="text-2xl font-bold mb-4 text-yellow-600">Función Cerebral e Intestinal</h3>
+              <p className="text-gray-700 mb-4">
+                Potencia la producción de neurotransmisores desde el intestino (nuestro "segundo cerebro"), 
+                fortalece la conexión del eje intestino-cerebro y ayuda a equilibrar el microbioma para 
+                un mejor estado de ánimo y claridad mental.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-xl shadow-lg"
+            >
+              <h3 className="text-2xl font-bold mb-4 text-yellow-600">Salud Intestinal</h3>
+              <p className="text-gray-700 mb-4">
+                Influye epigenéticamente en el gen MUC2, reforzando la barrera del intestino y 
+                eliminando obstáculos que afectan la absorción de nutrientes.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-xl shadow-lg"
+            >
+              <h3 className="text-2xl font-bold mb-4 text-yellow-600">Metabolismo Activo</h3>
+              <p className="text-gray-700 mb-4">
+                Aumenta el número de mitocondrias (las "centrales energéticas" de las células), 
+                mejora la sensibilidad a la insulina y favorece la saciedad, ayudando a sentir menos hambre.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-xl shadow-lg"
+            >
+              <h3 className="text-2xl font-bold mb-4 text-yellow-600">Inmunidad Regulada</h3>
+              <p className="text-gray-700 mb-4">
+                Modula genes responsables del sistema inmune, fortaleciendo su respuesta ante agresiones.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-xl shadow-lg"
+            >
+              <h3 className="text-2xl font-bold mb-4 text-yellow-600">Dermis Fortalecida</h3>
+              <p className="text-gray-700 mb-4">
+                Estimula la síntesis de colágeno y ayuda a equilibrar las defensas de la piel, 
+                mejorando su elasticidad y capacidad regenerativa.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-xl shadow-lg"
+            >
+              <h3 className="text-2xl font-bold mb-4 text-yellow-600">Inflamación Controlada</h3>
+              <p className="text-gray-700 mb-4">
+                Regula la respuesta inflamatoria actuando sobre genes relacionados con citocinas y células T.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Ingredients Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4">
@@ -132,8 +237,8 @@ export default function Linq() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-6 text-gray-800">Ingredientes Premium</h2>
-            <p className="text-xl text-gray-600">Cada ingrediente ha sido cuidadosamente seleccionado por su calidad y eficacia</p>
+            <h2 className="text-4xl font-bold mb-6 text-gray-800">Componentes Científicos</h2>
+            <p className="text-xl text-gray-600">Tecnología epigenética avanzada para resultados precisos y efectivos</p>
           </motion.div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
