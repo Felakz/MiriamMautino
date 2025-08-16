@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import AnimatedBackground from "./components/AnimatedBackground";
+import ChatBot from "./components/ChatBot";
+import { GlobalAnimatedBackground, GlobalForegroundAnimations, GlobalAnimationStyles } from "./components/GlobalAnimations";
 import Home from "./pages/Home";
 import InfoProducto from "./pages/InfoProducto";
 import Productos from "./pages/Productos";
@@ -24,6 +26,11 @@ function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-screen bg-white">
+        {/* Animaciones globales de fondo */}
+        <GlobalAnimationStyles />
+        <GlobalAnimatedBackground />
+        <GlobalForegroundAnimations />
+        
         <AnimatedBackground />
         <ScrollToTop />
         <Navbar />
@@ -48,6 +55,9 @@ function App() {
             <Route path="/preguntas" element={<Preguntas />} />
           </Routes>
         </main>
+        
+        {/* ChatBot global - aparece en todas las páginas */}
+        <ChatBot />
       </div>
     </Router>
   );

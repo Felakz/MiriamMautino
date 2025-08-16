@@ -50,9 +50,7 @@ export default function RegistroCliente() {
 🎯 *Interés:* ${formData.interes || "Por definir"}
 
 💬 *Mensaje:*
-${formData.mensaje || "Sin mensaje adicional"}
-
-¡Gracias por registrarte! Me pondré en contacto contigo pronto.`;
+${formData.mensaje || "Sin mensaje adicional"}`;
 
     // Enviar mensaje directo por WhatsApp
     const numeroWhatsApp = "51900653836";
@@ -114,14 +112,14 @@ ${formData.mensaje || "Sin mensaje adicional"}
   ];
 
   return (
-    <div className="min-h-screen pt-24 bg-gradient-to-br from-blue-50 to-purple-50">
+    <div className="min-h-screen pt-24 bg-gradient-to-br from-purple-50/80 via-white/80 to-pink-50/80 backdrop-blur-sm relative z-10">
       <div className="max-w-2xl mx-auto px-4 py-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-pink-500 to-purple-800 bg-clip-text text-transparent">
             Registro de Cliente
           </h1>
           <p className="text-xl text-gray-600">

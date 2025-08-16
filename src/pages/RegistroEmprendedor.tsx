@@ -54,9 +54,7 @@ export default function RegistroEmprendedor() {
 ⏰ *Horario Disponible:* ${formData.horarioDisponible || "Por coordinar"}
 
 💬 *Mensaje adicional:*
-${formData.mensaje || "Sin mensaje adicional"}
-
-¡Excelente! Pronto me pondré en contacto para explicarte todo sobre nuestra oportunidad de negocio.`;
+${formData.mensaje || "Sin mensaje adicional"}`;
 
     // Enviar mensaje directo por WhatsApp
     const numeroWhatsApp = "51900653836";
@@ -139,7 +137,7 @@ ${formData.mensaje || "Sin mensaje adicional"}
   ];
 
   return (
-    <div className="min-h-screen pt-24 bg-gradient-to-br from-purple-50 to-blue-50">
+    <div className="min-h-screen pt-24 bg-gradient-to-br from-purple-50/80 via-white/80 to-pink-50/80 backdrop-blur-sm relative z-10">
       <div className="max-w-2xl mx-auto px-4 py-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -147,7 +145,7 @@ ${formData.mensaje || "Sin mensaje adicional"}
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-pink-500 to-purple-800 bg-clip-text text-transparent">
             Registro de Emprendedor
           </h1>
           <p className="text-xl text-gray-600">
