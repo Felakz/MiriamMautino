@@ -15,6 +15,17 @@ export default function RegistroCliente() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
+    
+    // Para el campo teléfono, solo permitir números y máximo 9 dígitos
+    if (name === 'telefono') {
+      const numerosSolo = value.replace(/[^0-9]/g, '').slice(0, 9);
+      setFormData(prev => ({
+        ...prev,
+        [name]: numerosSolo
+      }));
+      return;
+    }
+    
     setFormData(prev => ({
       ...prev,
       [name]: value
@@ -156,8 +167,10 @@ ${formData.mensaje || "Sin mensaje adicional"}
               value={formData.telefono}
               onChange={handleInputChange}
               required
+              maxLength={9}
+              pattern="[0-9]{9}"
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-              placeholder="Ej: +51 999 999 999"
+              placeholder="999999999"
             />
           </div>
 
