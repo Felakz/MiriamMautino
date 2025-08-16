@@ -17,6 +17,8 @@ const SocialLinks = ({
           <h3 className={`text-2xl font-bold mb-4 ${textColor}`}>
             MM Bienestar & Emprendimiento
           </h3>
+          <p className="mb-2"><strong>Miriam Mautino</strong> - Consultora Activz</p>
+          <p className="mb-2">Entregas en Lima Norte</p>
           <p className="mb-2">Centro en Los Olivos</p>
           <p className="mb-6">(+51) 900653836</p>
 
@@ -105,6 +107,16 @@ const SocialLinks = ({
             </li>
           </ul>
         </div>
+      </div>
+      
+      {/* Copyright */}
+      <div className={`mt-8 pt-8 border-t border-white/20 text-center ${textColor}`}>
+        <p className="text-sm opacity-80">
+          © {new Date().getFullYear()} MM Bienestar & Emprendimiento - Miriam Mautino. Todos los derechos reservados.
+        </p>
+        <p className="text-xs opacity-60 mt-2">
+          Productos naturales para tu bienestar integral ✨
+        </p>
       </div>
     </footer>
   );

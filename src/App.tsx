@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import AnimatedBackground from "./components/AnimatedBackground";
 import ChatBot from "./components/ChatBot";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 import { GlobalAnimatedBackground, GlobalForegroundAnimations, GlobalAnimationStyles } from "./components/GlobalAnimations";
 import Home from "./pages/Home";
 import InfoProducto from "./pages/InfoProducto";
@@ -26,40 +27,43 @@ function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-screen bg-white">
-        {/* Animaciones globales de fondo */}
-        <GlobalAnimationStyles />
-        <GlobalAnimatedBackground />
-        <GlobalForegroundAnimations />
-        
-        <AnimatedBackground />
-        <ScrollToTop />
-        <Navbar />
-        <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/info-producto" element={<InfoProducto />} />
-            <Route path="/productos" element={<Productos />} />
-            <Route path="/productos/linq" element={<Linq />} />
-            <Route path="/productos/gnm-x" element={<GNMX />} />
-            <Route path="/productos/optimend" element={<Optimend />} />
-            <Route path="/registro/cliente" element={<RegistroCliente />} />
-            <Route path="/registro/emprendedor" element={<RegistroEmprendedor />} />
-            <Route path="/productos/airo" element={<Airo />} />
-            <Route path="/productos/nitrox" element={<Nitrox />} />
-            <Route path="/terminos" element={<Terminos />} />
-            <Route path="/politicas" element={<Politicas />} />
-            <Route path="/derechos" element={<Derechos />} />
-            <Route path="/cookies" element={<Cookies />} />
-            <Route path="/emprendimiento" element={<Emprendimiento />} />
-            <Route path="/contacto" element={<Contacto />} />
-            <Route path="/preguntas" element={<Preguntas />} />
-          </Routes>
-        </main>
-        
-        {/* ChatBot global - aparece en todas las páginas */}
-        <ChatBot />
-      </div>
-    </Router>
+          {/* Google Analytics */}
+          <GoogleAnalytics />
+          
+          {/* Animaciones globales de fondo */}
+          <GlobalAnimationStyles />
+          <GlobalAnimatedBackground />
+          <GlobalForegroundAnimations />
+          
+          <AnimatedBackground />
+          <ScrollToTop />
+          <Navbar />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/info-producto" element={<InfoProducto />} />
+              <Route path="/productos" element={<Productos />} />
+              <Route path="/productos/linq" element={<Linq />} />
+              <Route path="/productos/gnm-x" element={<GNMX />} />
+              <Route path="/productos/optimend" element={<Optimend />} />
+              <Route path="/registro/cliente" element={<RegistroCliente />} />
+              <Route path="/registro/emprendedor" element={<RegistroEmprendedor />} />
+              <Route path="/productos/airo" element={<Airo />} />
+              <Route path="/productos/nitrox" element={<Nitrox />} />
+              <Route path="/terminos" element={<Terminos />} />
+              <Route path="/politicas" element={<Politicas />} />
+              <Route path="/derechos" element={<Derechos />} />
+              <Route path="/cookies" element={<Cookies />} />
+              <Route path="/emprendimiento" element={<Emprendimiento />} />
+              <Route path="/contacto" element={<Contacto />} />
+              <Route path="/preguntas" element={<Preguntas />} />
+            </Routes>
+          </main>
+          
+          {/* ChatBot global - aparece en todas las páginas */}
+          <ChatBot />
+        </div>
+      </Router>
   );
 }
 

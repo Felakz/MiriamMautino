@@ -3,6 +3,8 @@ import { FaWhatsapp, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import SocialLinks from "../components/SocialLinks";
+import SEOHead from "../components/SEOHead";
+import { trackWhatsAppClick } from "../components/GoogleAnalytics";
 
 const features = [
 	{
@@ -100,6 +102,10 @@ export default function Home() {
 		const message =
 			"Hola, me interesa conocer más sobre sus productos. ¿Podrían brindarme más información?";
 		const url = `https://wa.me/51900653836?text=${encodeURIComponent(message)}`;
+		
+		// Rastrear el click en Google Analytics
+		trackWhatsAppClick();
+		
 		window.open(url, "_blank");
 	};
 
@@ -108,7 +114,10 @@ export default function Home() {
 	};
 
 	return (
-		<div className="min-h-screen relative">			
+		<div className="min-h-screen relative">
+			{/* SEO Meta Tags */}
+			<SEOHead />
+			
 			{/* Promo Banner - Fuera del hero, debajo del navbar */}
 			<div className="flex justify-center mt-16 md:mt-20 px-4">
 				<motion.div
