@@ -10,27 +10,27 @@ const SocialLinks = ({
   textColor = "text-white"
 }: SocialLinksProps) => {
   return (
-    <footer className={`bg-gradient-to-r ${gradientColors} ${textColor} py-10`}>
-      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className={`bg-gradient-to-r ${gradientColors} ${textColor} py-6`}>
+      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Contact Information and Social Media */}
         <div className="text-center">
-          <h3 className={`text-2xl font-bold mb-4 ${textColor}`}>
+          <h3 className={`text-xl font-bold mb-3 ${textColor}`}>
             MM Bienestar & Emprendimiento
           </h3>
-          <p className="mb-2"><strong>Miriam Mautino</strong> - Consultora Activz</p>
-          <p className="mb-2">Entregas en Lima Norte</p>
-          <p className="mb-2">Centro en Los Olivos</p>
-          <p className="mb-6">(+51) 900653836</p>
+          <p className="mb-1 text-sm"><strong>Miriam Mautino</strong> - Consultora Activz</p>
+          <p className="mb-1 text-sm">Entregas en Lima Norte</p>
+          <p className="mb-1 text-sm">Centro en Los Olivos</p>
+          <p className="mb-4 text-sm">(+51) 900653836</p>
 
           {/* Social Media Icons */}
-          <div className="flex justify-center space-x-6">
+          <div className="flex justify-center space-x-4">
             <a
               href="https://web.facebook.com/EpigeneticaSaludNatural"
               target="_blank"
               rel="noopener noreferrer"
               className={`${textColor} hover:text-blue-300 transition-colors duration-300`}
             >
-              <FaFacebook size={32} />
+              <FaFacebook size={24} />
             </a>
             <a
               href="https://www.instagram.com/miriammautino.activz?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
@@ -38,7 +38,7 @@ const SocialLinks = ({
               rel="noopener noreferrer"
               className={`${textColor} hover:text-pink-300 transition-colors duration-300`}
             >
-              <FaInstagram size={32} />
+              <FaInstagram size={24} />
             </a>
             <a
               href="https://www.youtube.com/@miriammautino1"
@@ -46,7 +46,7 @@ const SocialLinks = ({
               rel="noopener noreferrer"
               className={`${textColor} hover:text-red-300 transition-colors duration-300`}
             >
-              <FaYoutube size={32} />
+              <FaYoutube size={24} />
             </a>
             <a
               href="https://www.tiktok.com/@miriamepigenetica"
@@ -54,15 +54,15 @@ const SocialLinks = ({
               rel="noopener noreferrer"
               className={`${textColor} hover:text-purple-300 transition-colors duration-300`}
             >
-              <FaTiktok size={32} />
+              <FaTiktok size={24} />
             </a>
           </div>
         </div>
 
         {/* Mapa del Sitio */}
         <div className="text-center">
-          <h3 className="text-lg font-bold mb-4">Mapa del Sitio</h3>
-          <ul className="space-y-2">
+          <h3 className="text-lg font-bold mb-3">Mapa del Sitio</h3>
+          <ul className="space-y-1 text-sm">
             <li>
               <a href="/emprendimiento" className="hover:underline">
                 ¿Quiénes Somos?
@@ -83,8 +83,8 @@ const SocialLinks = ({
 
         {/* Information */}
         <div className="text-center">
-          <h3 className="text-lg font-bold mb-4">Información</h3>
-          <ul className="space-y-2">
+          <h3 className="text-lg font-bold mb-3">Información</h3>
+          <ul className="space-y-1 text-sm">
             <li>
               <a href="/terminos" className="hover:underline">
                 Términos y Condiciones
@@ -110,11 +110,11 @@ const SocialLinks = ({
       </div>
       
       {/* Copyright */}
-      <div className={`mt-8 pt-8 border-t border-white/20 text-center ${textColor}`}>
-        <p className="text-sm opacity-80">
+      <div className={`mt-6 pt-4 border-t border-white/20 text-center ${textColor}`}>
+        <p className="text-xs opacity-80">
           © {new Date().getFullYear()} MM Bienestar & Emprendimiento - Miriam Mautino. Todos los derechos reservados.
         </p>
-        <p className="text-xs opacity-60 mt-2">
+        <p className="text-xs opacity-60 mt-1">
           Productos naturales para tu bienestar integral ✨
         </p>
       </div>
