@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaWhatsapp, FaCheckCircle, FaStar } from "react-icons/fa";
+import { FaWhatsapp, FaCheckCircle, FaStar, FaBrain, FaShieldAlt, FaFire, FaLeaf, FaSeedling, FaHeartbeat } from "react-icons/fa";
 import SocialLinks from "../components/SocialLinks";
 
 export default function Linq() {
@@ -148,7 +148,23 @@ export default function Linq() {
               viewport={{ once: true }}
               className="bg-white p-8 rounded-xl shadow-lg"
             >
-              <h3 className="text-2xl font-bold mb-4 text-yellow-600">Función Cerebral e Intestinal</h3>
+              <div className="flex items-center gap-4 mb-4">
+                <motion.div
+                  animate={{ 
+                    scale: [1, 1.1, 1],
+                    rotate: [0, 10, -10, 0]
+                  }}
+                  transition={{ 
+                    duration: 2.5,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center"
+                >
+                  <FaBrain className="text-yellow-600 text-xl" />
+                </motion.div>
+                <h3 className="text-2xl font-bold text-yellow-600">Función Cerebral e Intestinal</h3>
+              </div>
               <p className="text-gray-700 mb-4">
                 Potencia la producción de neurotransmisores desde el intestino (nuestro "segundo cerebro"), 
                 fortalece la conexión del eje intestino-cerebro y ayuda a equilibrar el microbioma para 
@@ -163,7 +179,23 @@ export default function Linq() {
               viewport={{ once: true }}
               className="bg-white p-8 rounded-xl shadow-lg"
             >
-              <h3 className="text-2xl font-bold mb-4 text-yellow-600">Salud Intestinal</h3>
+              <div className="flex items-center gap-4 mb-4">
+                <motion.div
+                  animate={{ 
+                    y: [0, -8, 0],
+                    scale: [1, 1.05, 1]
+                  }}
+                  transition={{ 
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center"
+                >
+                  <FaLeaf className="text-yellow-600 text-xl" />
+                </motion.div>
+                <h3 className="text-2xl font-bold text-yellow-600">Salud Intestinal</h3>
+              </div>
               <p className="text-gray-700 mb-4">
                 Influye epigenéticamente en el gen MUC2, reforzando la barrera del intestino y 
                 eliminando obstáculos que afectan la absorción de nutrientes.
@@ -177,7 +209,23 @@ export default function Linq() {
               viewport={{ once: true }}
               className="bg-white p-8 rounded-xl shadow-lg"
             >
-              <h3 className="text-2xl font-bold mb-4 text-yellow-600">Metabolismo Activo</h3>
+              <div className="flex items-center gap-4 mb-4">
+                <motion.div
+                  animate={{ 
+                    scale: [1, 1.3, 1],
+                    opacity: [0.7, 1, 0.7]
+                  }}
+                  transition={{ 
+                    duration: 1.8,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center"
+                >
+                  <FaFire className="text-yellow-600 text-xl" />
+                </motion.div>
+                <h3 className="text-2xl font-bold text-yellow-600">Metabolismo Activo</h3>
+              </div>
               <p className="text-gray-700 mb-4">
                 Aumenta el número de mitocondrias (las "centrales energéticas" de las células), 
                 mejora la sensibilidad a la insulina y favorece la saciedad, ayudando a sentir menos hambre.
@@ -191,7 +239,22 @@ export default function Linq() {
               viewport={{ once: true }}
               className="bg-white p-8 rounded-xl shadow-lg"
             >
-              <h3 className="text-2xl font-bold mb-4 text-yellow-600">Inmunidad Regulada</h3>
+              <div className="flex items-center gap-4 mb-4">
+                <motion.div
+                  animate={{ 
+                    rotate: [0, 360]
+                  }}
+                  transition={{ 
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "linear"
+                  }}
+                  className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center"
+                >
+                  <FaShieldAlt className="text-yellow-600 text-xl" />
+                </motion.div>
+                <h3 className="text-2xl font-bold text-yellow-600">Inmunidad Regulada</h3>
+              </div>
               <p className="text-gray-700 mb-4">
                 Modula genes responsables del sistema inmune, fortaleciendo su respuesta ante agresiones.
               </p>
@@ -204,7 +267,23 @@ export default function Linq() {
               viewport={{ once: true }}
               className="bg-white p-8 rounded-xl shadow-lg"
             >
-              <h3 className="text-2xl font-bold mb-4 text-yellow-600">Dermis Fortalecida</h3>
+              <div className="flex items-center gap-4 mb-4">
+                <motion.div
+                  animate={{ 
+                    scale: [1, 1.2, 1],
+                    rotate: [0, 5, -5, 0]
+                  }}
+                  transition={{ 
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center"
+                >
+                  <FaSeedling className="text-yellow-600 text-xl" />
+                </motion.div>
+                <h3 className="text-2xl font-bold text-yellow-600">Dermis Fortalecida</h3>
+              </div>
               <p className="text-gray-700 mb-4">
                 Estimula la síntesis de colágeno y ayuda a equilibrar las defensas de la piel, 
                 mejorando su elasticidad y capacidad regenerativa.
@@ -218,7 +297,23 @@ export default function Linq() {
               viewport={{ once: true }}
               className="bg-white p-8 rounded-xl shadow-lg"
             >
-              <h3 className="text-2xl font-bold mb-4 text-yellow-600">Inflamación Controlada</h3>
+              <div className="flex items-center gap-4 mb-4">
+                <motion.div
+                  animate={{ 
+                    y: [0, -5, 5, 0],
+                    scale: [1, 1.1, 1]
+                  }}
+                  transition={{ 
+                    duration: 2.2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center"
+                >
+                  <FaHeartbeat className="text-yellow-600 text-xl" />
+                </motion.div>
+                <h3 className="text-2xl font-bold text-yellow-600">Inflamación Controlada</h3>
+              </div>
               <p className="text-gray-700 mb-4">
                 Regula la respuesta inflamatoria actuando sobre genes relacionados con citocinas y células T.
               </p>

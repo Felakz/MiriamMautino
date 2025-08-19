@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaWhatsapp, FaCheckCircle } from "react-icons/fa";
+import { FaWhatsapp, FaCheckCircle, FaBalanceScale, FaHandHoldingHeart, FaRunning, FaCogs, FaShieldAlt, FaPuzzlePiece } from "react-icons/fa";
 import SocialLinks from "../components/SocialLinks";
 
 export default function Optimend() {
@@ -139,7 +139,23 @@ export default function Optimend() {
               viewport={{ once: true }}
               className="bg-white p-8 rounded-xl shadow-lg"
             >
-              <h3 className="text-2xl font-bold mb-4 text-purple-600">Inflamación Equilibrada</h3>
+              <div className="flex items-center gap-4 mb-4">
+                <motion.div
+                  animate={{ 
+                    rotate: [0, -10, 10, 0],
+                    scale: [1, 1.1, 1]
+                  }}
+                  transition={{ 
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center"
+                >
+                  <FaBalanceScale className="text-purple-600 text-xl" />
+                </motion.div>
+                <h3 className="text-2xl font-bold text-purple-600">Inflamación Equilibrada</h3>
+              </div>
               <p className="text-gray-700 mb-4">
                 Ayuda a mantener una respuesta inflamatoria saludable, promoviendo el equilibrio natural 
                 de tu cuerpo sin efectos secundarios adversos.
@@ -153,7 +169,23 @@ export default function Optimend() {
               viewport={{ once: true }}
               className="bg-white p-8 rounded-xl shadow-lg"
             >
-              <h3 className="text-2xl font-bold mb-4 text-purple-600">Alivia Dolores Menores</h3>
+              <div className="flex items-center gap-4 mb-4">
+                <motion.div
+                  animate={{ 
+                    y: [0, -8, 0],
+                    scale: [1, 1.15, 1]
+                  }}
+                  transition={{ 
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center"
+                >
+                  <FaHandHoldingHeart className="text-purple-600 text-xl" />
+                </motion.div>
+                <h3 className="text-2xl font-bold text-purple-600">Alivia Dolores Menores</h3>
+              </div>
               <p className="text-gray-700 mb-4">
                 Reduce molestias comunes, incluyendo las relacionadas con ejercicio o lesiones, 
                 ofreciendo alivio natural y efectivo.
@@ -167,7 +199,23 @@ export default function Optimend() {
               viewport={{ once: true }}
               className="bg-white p-8 rounded-xl shadow-lg"
             >
-              <h3 className="text-2xl font-bold mb-4 text-purple-600">Movilidad Articular</h3>
+              <div className="flex items-center gap-4 mb-4">
+                <motion.div
+                  animate={{ 
+                    x: [0, 10, -10, 0],
+                    rotate: [0, 5, -5, 0]
+                  }}
+                  transition={{ 
+                    duration: 2.5,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center"
+                >
+                  <FaRunning className="text-purple-600 text-xl" />
+                </motion.div>
+                <h3 className="text-2xl font-bold text-purple-600">Movilidad Articular</h3>
+              </div>
               <p className="text-gray-700 mb-4">
                 Promueve mayor flexibilidad y movilidad en las articulaciones, mejorando tu 
                 calidad de vida y capacidad de movimiento.
@@ -181,7 +229,22 @@ export default function Optimend() {
               viewport={{ once: true }}
               className="bg-white p-8 rounded-xl shadow-lg"
             >
-              <h3 className="text-2xl font-bold mb-4 text-purple-600">Tecnología Avanzada</h3>
+              <div className="flex items-center gap-4 mb-4">
+                <motion.div
+                  animate={{ 
+                    rotate: [0, 360]
+                  }}
+                  transition={{ 
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "linear"
+                  }}
+                  className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center"
+                >
+                  <FaCogs className="text-purple-600 text-xl" />
+                </motion.div>
+                <h3 className="text-2xl font-bold text-purple-600">Tecnología Avanzada</h3>
+              </div>
               <p className="text-gray-700 mb-4">
                 Gracias a CyLoc™ + DexKey™, maximiza la absorción de ingredientes clave, 
                 siendo más eficaz que la cúrcuma estándar tradicional.
@@ -195,7 +258,23 @@ export default function Optimend() {
               viewport={{ once: true }}
               className="bg-white p-8 rounded-xl shadow-lg"
             >
-              <h3 className="text-2xl font-bold mb-4 text-purple-600">Opción Más Segura</h3>
+              <div className="flex items-center gap-4 mb-4">
+                <motion.div
+                  animate={{ 
+                    scale: [1, 1.2, 1],
+                    opacity: [0.8, 1, 0.8]
+                  }}
+                  transition={{ 
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center"
+                >
+                  <FaShieldAlt className="text-purple-600 text-xl" />
+                </motion.div>
+                <h3 className="text-2xl font-bold text-purple-600">Opción Más Segura</h3>
+              </div>
               <p className="text-gray-700 mb-4">
                 A diferencia de medicamentos convencionales, evita riesgos como problemas cardíacos, 
                 gastritis, adicción o complicaciones gastrointestinales.
@@ -209,7 +288,23 @@ export default function Optimend() {
               viewport={{ once: true }}
               className="bg-white p-8 rounded-xl shadow-lg"
             >
-              <h3 className="text-2xl font-bold mb-4 text-purple-600">Health Mesh ACTIVZ</h3>
+              <div className="flex items-center gap-4 mb-4">
+                <motion.div
+                  animate={{ 
+                    scale: [1, 1.1, 1],
+                    rotate: [0, 180, 360]
+                  }}
+                  transition={{ 
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center"
+                >
+                  <FaPuzzlePiece className="text-purple-600 text-xl" />
+                </motion.div>
+                <h3 className="text-2xl font-bold text-purple-600">Health Mesh ACTIVZ</h3>
+              </div>
               <p className="text-gray-700 mb-4">
                 No reemplaza a GNM-X, sino que lo complementa perfectamente dentro del enfoque 
                 holístico de ACTIVZ para una salud celular óptima.

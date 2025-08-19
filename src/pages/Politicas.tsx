@@ -91,8 +91,8 @@ export default function Politicas() {
 
       {/* Footer */}
       <SocialLinks 
-        gradientColors="from-purple-150 via-pink-150 to-purple-250" 
-        textColor="text-gray-700"
+        gradientColors="from-purple-200 via-pink-200 to-purple-300" 
+        textColor="text-gray-800"
       />
     </div>
   );

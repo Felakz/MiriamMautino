@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaWhatsapp, FaCheckCircle, FaStar } from "react-icons/fa";
+import { FaWhatsapp, FaCheckCircle, FaStar, FaShieldAlt, FaDna, FaClock, FaBolt } from "react-icons/fa";
 import SocialLinks from "../components/SocialLinks";
 
 export default function GNMX() {
@@ -144,7 +144,23 @@ export default function GNMX() {
               viewport={{ once: true }}
               className="bg-white p-8 rounded-xl shadow-lg"
             >
-              <h3 className="text-2xl font-bold mb-4 text-green-600">Reducción del Estrés Oxidativo</h3>
+              <div className="flex items-center gap-4 mb-4">
+                <motion.div
+                  animate={{ 
+                    scale: [1, 1.2, 1],
+                    rotate: [0, 360]
+                  }}
+                  transition={{ 
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center"
+                >
+                  <FaShieldAlt className="text-green-600 text-xl" />
+                </motion.div>
+                <h3 className="text-2xl font-bold text-green-600">Reducción del Estrés Oxidativo</h3>
+              </div>
               <p className="text-gray-700 mb-4">
                 Activa mecanismos antioxidantes naturales para proteger tus células del envejecimiento 
                 celular y combate los efectos negativos de factores ambientales adversos.
@@ -158,7 +174,23 @@ export default function GNMX() {
               viewport={{ once: true }}
               className="bg-white p-8 rounded-xl shadow-lg"
             >
-              <h3 className="text-2xl font-bold mb-4 text-green-600">Optimización Genética</h3>
+              <div className="flex items-center gap-4 mb-4">
+                <motion.div
+                  animate={{ 
+                    y: [0, -10, 0],
+                    scale: [1, 1.1, 1]
+                  }}
+                  transition={{ 
+                    duration: 2.5,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center"
+                >
+                  <FaDna className="text-green-600 text-xl" />
+                </motion.div>
+                <h3 className="text-2xl font-bold text-green-600">Optimización Genética</h3>
+              </div>
               <p className="text-gray-700 mb-4">
                 Mediante influencias epigenéticas, ayuda a que tus genes funcionen mejor frente a 
                 factores externos adversos, regulando la expresión genética de manera óptima.
@@ -172,7 +204,22 @@ export default function GNMX() {
               viewport={{ once: true }}
               className="bg-white p-8 rounded-xl shadow-lg"
             >
-              <h3 className="text-2xl font-bold mb-4 text-green-600">Protección Prolongada Nrf2</h3>
+              <div className="flex items-center gap-4 mb-4">
+                <motion.div
+                  animate={{ 
+                    rotate: [0, 360]
+                  }}
+                  transition={{ 
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "linear"
+                  }}
+                  className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center"
+                >
+                  <FaClock className="text-green-600 text-xl" />
+                </motion.div>
+                <h3 className="text-2xl font-bold text-green-600">Protección Prolongada Nrf2</h3>
+              </div>
               <p className="text-gray-700 mb-4">
                 Inhibe rutas de apagado intracelular para que la proteína Nrf2 actúe más tiempo, 
                 proporcionando protección celular extendida y continua.
@@ -186,7 +233,23 @@ export default function GNMX() {
               viewport={{ once: true }}
               className="bg-white p-8 rounded-xl shadow-lg"
             >
-              <h3 className="text-2xl font-bold mb-4 text-green-600">Activación Robusta 10:1</h3>
+              <div className="flex items-center gap-4 mb-4">
+                <motion.div
+                  animate={{ 
+                    scale: [1, 1.4, 1],
+                    opacity: [0.7, 1, 0.7]
+                  }}
+                  transition={{ 
+                    duration: 1.5,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center"
+                >
+                  <FaBolt className="text-green-600 text-xl" />
+                </motion.div>
+                <h3 className="text-2xl font-bold text-green-600">Activación Robusta 10:1</h3>
+              </div>
               <p className="text-gray-700 mb-4">
                 GNM-X activa Nrf2 en una proporción de 10:1 comparado con productos similares, 
                 ofreciendo la activación más potente disponible en el mercado.
