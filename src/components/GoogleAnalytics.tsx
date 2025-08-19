@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-// Reemplaza 'G-XXXXXXXXXX' con tu ID real de Google Analytics
-const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // 🔥 CAMBIAR POR TU ID REAL
+// ID de Google Analytics para MM Bienestar & Emprendimiento
+const GA_MEASUREMENT_ID = 'G-9SPWFK871W'; // ✅ CONFIGURADO CORRECTAMENTE
 
 // Función para cargar Google Analytics
 const loadGoogleAnalytics = () => {
