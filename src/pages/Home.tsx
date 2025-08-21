@@ -426,8 +426,19 @@ export default function Home() {
 
 			{/* Modal Publicitario */}
 			{showModal && (
-				<div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-					<div className="bg-white p-6 rounded-lg shadow-lg max-w-md text-center relative">
+				<motion.div
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					exit={{ opacity: 0 }}
+					className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+				>
+					<motion.div
+						initial={{ scale: 0.8, opacity: 0 }}
+						animate={{ scale: 1, opacity: 1 }}
+						exit={{ scale: 0.8, opacity: 0 }}
+						transition={{ duration: 0.3 }}
+						className="bg-white p-6 rounded-lg shadow-lg max-w-md text-center relative"
+					>
 						<button
               onClick={() => setShowModal(false)}
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
@@ -447,8 +458,8 @@ export default function Home() {
 						>
 							Más información
 						</button>
-					</div>
-				</div>
+					</motion.div>
+				</motion.div>
 			)}
 
 			{/* Footer */}
