@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FaCheckCircle, FaDna, FaBrain, FaHeart, FaRunning, FaMicroscope, FaStar, FaLightbulb, FaRocket, FaFlask, FaLeaf } from "react-icons/fa";
 import SocialLinks from "../components/SocialLinks";
+import { useState, useEffect } from "react";
 
 const epigeneticBenefits = [
   "Reduce el dolor crónico de manera natural",
@@ -42,8 +43,34 @@ const researchStats = [
 ];
 
 function InfoProducto() {
+  const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    setShowModal(true);
+  }, []);
+
   return (
     <div className="min-h-screen pt-24">
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-md text-center">
+            <h2 className="text-2xl font-bold mb-4">Productos Epigenéticos ACTIVZ</h2>
+            <p className="text-gray-700 mb-4">Descubre el poder transformador de la epigenética con nuestros productos 100% naturales.</p>
+            <img
+              src="/productos/productos-todos.png"
+              alt="Productos ACTIVZ"
+              className="max-w-full rounded-lg mb-4"
+            />
+            <button
+              onClick={() => setShowModal(false)}
+              className="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-purple-50/80 via-white/80 to-pink-50/80 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto px-4">

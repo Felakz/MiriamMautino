@@ -64,6 +64,7 @@ const videos = [
 export default function Home() {
 	const [currentVideo, setCurrentVideo] = useState(0);
 	const [currentTestimonial, setCurrentTestimonial] = useState(0);
+	const [showModal, setShowModal] = useState(false);
 	const navigate = useNavigate();
 
 	// Auto-cambio de testimonios cada 4 segundos
@@ -117,6 +118,10 @@ export default function Home() {
 	const handleProductsClick = () => {
 		navigate('/productos');
 	};
+
+	useEffect(() => {
+		setShowModal(true);
+	}, []);
 
 	return (
 		<div className="min-h-screen relative">
@@ -418,6 +423,33 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
+
+			{/* Modal Publicitario */}
+			{showModal && (
+				<div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+					<div className="bg-white p-6 rounded-lg shadow-lg max-w-md text-center relative">
+						<button
+              onClick={() => setShowModal(false)}
+              className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
+            >
+              ✖
+            </button>
+						<h2 className="text-2xl font-bold mb-4">Productos Epigenéticos ACTIVZ</h2>
+						<p className="text-gray-700 mb-4">Descubre el poder transformador de la epigenética con nuestros productos 100% naturales.</p>
+						<img
+							src="/productos/productos-todos.png"
+							alt="Productos ACTIVZ"
+							className="max-w-full rounded-lg mb-4"
+						/>
+						<button
+							onClick={() => window.location.href = '/productos'}
+							className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+						>
+							Más información
+						</button>
+					</div>
+				</div>
+			)}
 
 			{/* Footer */}
 			<div className="relative z-10">
