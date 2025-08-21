@@ -14,11 +14,11 @@ const productos = [
 	{
 		name: "Linq",
 		description:
-			"Fórmula epigenética científica diseñada para apoyar múltiples sistemas del cuerpo. Mejora la función cerebral, optimiza la salud intestinal y fortalece el sistema inmunológico.",
+			"LINQ es una fórmula epigenética científica diseñada para apoyar múltiples sistemas del cuerpo.",
 		benefits: [
-			"Mejora función cerebral e intestinal",
-			"Optimiza absorción de nutrientes",
-			"Aumenta metabolismo y controla apetito",
+			"Mejora la función cerebral y la conexión intestino-cerebro",
+			"Optimiza la salud intestinal y absorción de nutrientes",
+			"Aumenta el metabolismo y controla el apetito",
 		],
 		price: "S/. 300",
 		image: "/LINQ.png",
@@ -28,11 +28,11 @@ const productos = [
 	{
 		name: "GNM-X",
 		description:
-			"El activador más potente de Nrf2 en el mercado. Regulador de expresión genética que genera cambios epigenéticos para una función celular óptima.",
+			"El activador más potente de Nrf2 que regula la expresión genética para una función celular óptima.",
 		benefits: [
-			"Reduce estrés oxidativo y envejecimiento",
-			"Optimiza expresión genética (epigenética)",
-			"Activación robusta Nrf2 (10:1)",
+			"Reducción del estrés oxidativo y envejecimiento celular",
+			"Optimización de la expresión génica (epigenética)",
+			"Activación robusta de Nrf2 (proporción 10:1)",
 		],
 		price: "S/. 270",
 		image: "/GNM-X.png",
@@ -42,11 +42,11 @@ const productos = [
 	{
 		name: "Optimend",
 		description:
-			"Fórmula avanzada con tecnología patent pending que combina medicina ayurvédica con innovaciones como CyLoc™ y DexKey™ para salud articular.",
+			"Fórmula avanzada que combina medicina ayurvédica con tecnologías innovadoras.",
 		benefits: [
-			"Inflamación equilibrada y saludable",
-			"Alivia dolores menores naturalmente",
-			"Mejora movilidad articular",
+			"Inflamación equilibrada y respuesta saludable",
+			"Alivia dolores menores y molestias comunes",
+			"Mejora la movilidad articular y flexibilidad",
 		],
 		price: "S/. 300",
 		image: "/OPTIMEND.png",
@@ -56,11 +56,11 @@ const productos = [
 	{
 		name: "Airo",
 		description:
-			"Suplemento innovador para el bienestar respiratorio. Ayuda a mantener las vías respiratorias despejadas y saludables.",
+			"Una poderosa fórmula epigenética científicamente comprobada para aumentar la energía y apoyar la pérdida de peso.",
 		benefits: [
-			"Mejora la respiración",
-			"Aumenta la energía",
-			"Refuerza el sistema inmunológico",
+			"Aumenta la energía natural sin cafeína excesiva",
+			"Estimula el metabolismo para quemar calorías",
+			"Suprime el apetito de forma natural",
 		],
 		price: "S/. 280",
 		image: "/AIRO.png",
@@ -70,11 +70,11 @@ const productos = [
 	{
 		name: "Nitrox",
 		description:
-			"Fórmula potente para aumentar el óxido nítrico en el cuerpo. Mejora el flujo sanguíneo y la entrega de nutrientes.",
+			"Bebida en polvo que potencia y equilibra la producción de óxido nítrico para mejorar tu bienestar cardiovascular.",
 		benefits: [
-			"Aumenta la energía",
-			"Mejora el rendimiento físico",
-			"Favorece la recuperación muscular",
+			"Potencia la producción natural de óxido nítrico",
+			"Mejora el bienestar cardiovascular significativamente",
+			"Aumenta la energía sin cafeína ni estimulantes",
 		],
 		price: "S/. 280",
 		image: "/NITROX.png",
@@ -94,7 +94,7 @@ export default function Productos() {
 					<motion.div
 						initial={{ opacity: 0, y: 30 }}
 						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.8 }}
+						transition={{ duration: 0.5 }}
 						className="text-center mb-16"
 					>
 						<h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">

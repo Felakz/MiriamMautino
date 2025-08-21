@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaCheckCircle, FaDna, FaBrain, FaHeart, FaRunning, FaMicroscope, FaStar, FaLightbulb, FaRocket } from "react-icons/fa";
+import { FaCheckCircle, FaDna, FaBrain, FaHeart, FaRunning, FaMicroscope, FaStar, FaLightbulb, FaRocket, FaFlask, FaLeaf } from "react-icons/fa";
 import SocialLinks from "../components/SocialLinks";
 
 const epigeneticBenefits = [
@@ -80,17 +80,17 @@ function InfoProducto() {
       </section>
 
       {/* What is Epigenetics Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-50/80 to-pink-50/80 backdrop-blur-sm">
+      <section className="py-16 bg-gradient-to-br from-purple-50/80 to-pink-50/80 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-pink-500 to-purple-800 bg-clip-text text-transparent">¿Qué es la Epigenética?</h2>
-            <div className="max-w-4xl mx-auto bg-gradient-to-r from-purple-50 to-pink-50 p-8 rounded-xl">
+            <div className="max-w-4xl mx-auto bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl">
               <p className="text-lg text-gray-700 leading-relaxed">
                 La <span className="font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">epigenética</span> es el campo revolucionario que estudia cómo 
                 factores como la <span className="font-semibold">dieta, estrés, ejercicio y entorno</span> pueden 
@@ -122,9 +122,9 @@ function InfoProducto() {
                     ease: "easeInOut",
                     delay: index * 0.5
                   }}
-                  className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center"
+                  className="w-14 h-14 mx-auto mb-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center"
                 >
-                  <fact.icon className="text-white text-2xl" />
+                  <fact.icon className="text-white text-xl" />
                 </motion.div>
                 <h3 className="text-lg font-bold text-gray-800 mb-2">{fact.title}</h3>
                 <p className="text-gray-600 text-sm">{fact.description}</p>
@@ -159,7 +159,7 @@ function InfoProducto() {
                 >
                   <FaLightbulb className="text-white text-xl" />
                 </motion.div>
-                <h2 className="text-4xl font-bold text-gray-800">EL POTENCIAL</h2>
+                <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-purple-600 via-pink-500 to-purple-800 bg-clip-text text-transparent">EL POTENCIAL</h2>
               </div>
               <p className="text-lg text-gray-700 mb-8">
                 <span className="font-bold text-purple-600">Imagina utilizar la epigenética</span> para liberar el potencial 
@@ -249,7 +249,7 @@ function InfoProducto() {
               >
                 <FaMicroscope className="text-white text-xl" />
               </motion.div>
-              <h2 className="text-4xl font-bold text-black">LA CIENCIA</h2>
+              <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-purple-600 via-pink-500 to-purple-800 bg-clip-text text-transparent">LA CIENCIA</h2>
             </div>
             <div className="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg">
               <p className="text-lg text-gray-800 leading-relaxed mb-6">
@@ -321,7 +321,7 @@ function InfoProducto() {
               >
                 <FaStar className="text-white text-lg" />
               </motion.div>
-              <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-purple-800 bg-clip-text text-transparent">BENEFICIOS DE LA EPIGENÉTICA</h2>
+              <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-purple-600 via-pink-500 to-purple-800 bg-clip-text text-transparent">BENEFICIOS DE LA EPIGENÉTICA</h2>
             </div>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               Descubre cómo la epigenética está revolucionando nuestra comprensión de la salud
@@ -448,6 +448,127 @@ function InfoProducto() {
         </div>
       </section>
 
+      {/* Datos Científicos Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <motion.div
+              animate={{ 
+                rotate: [0, 360]
+              }}
+              transition={{ 
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+              className="w-14 h-14 mx-auto mb-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center"
+            >
+              <FaMicroscope className="text-white text-2xl" />
+            </motion.div>
+            <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-purple-600 via-pink-500 to-purple-800 bg-clip-text text-transparent">Datos Científicos</h2>
+            <p className="text-lg text-gray-600">Explora los resultados de búsqueda en estudios científicos relacionados con nuestros productos.</p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-6 items-center">
+            {/* Imagen Centrada con Fondo */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="flex justify-center bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-lg"
+            >
+              <img
+                src="/src/assets/productos/productos-todos.png"
+                alt="Productos Científicos"
+                className="max-w-full rounded-lg shadow-md"
+              />
+            </motion.div>
+
+            {/* Descripciones Alrededor */}
+            <div className="space-y-4">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="bg-white p-4 rounded-lg shadow-sm text-center"
+              >
+                <motion.div
+                  animate={{ scale: [1, 1.1, 1], rotate: [0, 10, -10, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  className="w-10 h-10 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-3"
+                >
+                  <FaFlask className="text-white text-lg" />
+                </motion.div>
+                <h3 className="text-xl font-bold text-orange-600">Ácido Butírico</h3>
+                <p className="text-gray-600 text-sm">104,503 resultados de búsqueda en estudios científicos relacionados en PubMed.</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="bg-white p-4 rounded-lg shadow-sm text-center"
+              >
+                <motion.div
+                  animate={{ scale: [1, 1.1, 1], rotate: [0, 10, -10, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  className="w-10 h-10 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-3"
+                >
+                  <FaLeaf className="text-white text-lg" />
+                </motion.div>
+                <h3 className="text-xl font-bold text-yellow-600">Cúrcuma</h3>
+                <p className="text-gray-600 text-sm">24,602 resultados de búsqueda en estudios científicos relacionados en PubMed.</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="bg-white p-4 rounded-lg shadow-sm text-center"
+              >
+                <motion.div
+                  animate={{ scale: [1, 1.1, 1], rotate: [0, 10, -10, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  className="w-10 h-10 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-3"
+                >
+                  <FaDna className="text-white text-lg" />
+                </motion.div>
+                <h3 className="text-xl font-bold text-green-600">NRF2</h3>
+                <p className="text-gray-600 text-sm">32,122 resultados de búsqueda en estudios científicos relacionados en PubMed.</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="bg-white p-4 rounded-lg shadow-sm text-center"
+              >
+                <motion.div
+                  animate={{ scale: [1, 1.1, 1], rotate: [0, 10, -10, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  className="w-10 h-10 bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-3"
+                >
+                  <FaMicroscope className="text-white text-lg" />
+                </motion.div>
+                <h3 className="text-xl font-bold text-red-600">Óxido Nítrico</h3>
+                <p className="text-gray-600 text-sm">199,860 resultados de búsqueda en estudios científicos relacionados en PubMed.</p>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Future Section */}
       <section className="py-20 bg-gradient-to-br from-purple-50/80 to-pink-50/80 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto px-4">
@@ -473,7 +594,7 @@ function InfoProducto() {
               >
                 <FaRocket className="text-white text-xl" />
               </motion.div>
-              <h2 className="text-4xl font-bold text-gray-800">TU FUTURO SALUDABLE</h2>
+              <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-purple-600 via-pink-500 to-purple-800 bg-clip-text text-transparent">TU FUTURO SALUDABLE</h2>
             </div>
             <div className="max-w-4xl mx-auto bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg">
               <p className="text-lg text-gray-800 leading-relaxed mb-6">
