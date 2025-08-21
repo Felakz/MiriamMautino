@@ -485,7 +485,7 @@ function InfoProducto() {
               className="flex justify-center bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-lg"
             >
               <img
-                src="src/assets/productos/productos-todos.png"
+                src="src\assets\productos\productos-todos.png"
                 alt="Productos Científicos"
                 className="max-w-full rounded-lg shadow-md"
               />
