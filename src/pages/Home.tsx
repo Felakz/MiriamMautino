@@ -123,6 +123,8 @@ export default function Home() {
 	useEffect(() => {
 		if (location.pathname === "/") {
 			setShowModal(true);
+		} else {
+			setShowModal(false);
 		}
 	}, [location]);
 

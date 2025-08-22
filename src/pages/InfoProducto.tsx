@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { FaCheckCircle, FaDna, FaBrain, FaHeart, FaRunning, FaMicroscope, FaStar, FaLightbulb, FaRocket, FaFlask, FaLeaf } from "react-icons/fa";
 import SocialLinks from "../components/SocialLinks";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 const epigeneticBenefits = [
   "Reduce el dolor crónico de manera natural",
@@ -42,42 +42,36 @@ const researchStats = [
   { number: "100%", label: "Base Científica" }
 ];
 
+function detectDevice() {
+  return window.innerWidth <= 768 ? "mobile" : "desktop";
+}
+
 function InfoProducto() {
-  const [showModal, setShowModal] = useState(false);
+  const deviceType = detectDevice();
 
   useEffect(() => {
-    setShowModal(true);
-  }, []);
+    const handleResize = () => {
+      const newDeviceType = detectDevice();
+      if (newDeviceType !== deviceType) {
+        window.location.reload();
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [deviceType]);
 
   return (
     <div className="min-h-screen pt-24">
-      {showModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg max-w-md text-center">
-            <h2 className="text-2xl font-bold mb-4">Productos Epigenéticos ACTIVZ</h2>
-            <p className="text-gray-700 mb-4">Descubre el poder transformador de la epigenética con nuestros productos 100% naturales.</p>
-            <img
-              src="/productos/productos-todos.png"
-              alt="Productos ACTIVZ"
-              className="max-w-full rounded-lg mb-4"
-            />
-            <button
-              onClick={() => setShowModal(false)}
-              className="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600"
-            >
-              Cerrar
-            </button>
-          </div>
-        </div>
-      )}
-
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-purple-50/80 via-white/80 to-pink-50/80 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: deviceType === "mobile" ? 0.5 : 0.8 }}
             className="text-center mb-16">
 
             <motion.div
@@ -85,7 +79,7 @@ function InfoProducto() {
                 rotate: [0, 360]
               }}
               transition={{ 
-                duration: 20,
+                duration: deviceType === "mobile" ? 10 : 20,
                 repeat: Infinity,
                 ease: "linear"
               }}
@@ -112,7 +106,7 @@ function InfoProducto() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: deviceType === "mobile" ? 0.4 : 0.6 }}
             viewport={{ once: true }}
             className="text-center mb-12"
           >
@@ -134,7 +128,7 @@ function InfoProducto() {
                 key={index}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: deviceType === "mobile" ? 0.3 : 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="card text-center bg-gradient-to-br from-blue-50 to-purple-100 hover:shadow-lg transition-all duration-300"
               >
@@ -144,7 +138,7 @@ function InfoProducto() {
                     rotate: [0, 5, -5, 0]
                   }}
                   transition={{ 
-                    duration: 3,
+                    duration: deviceType === "mobile" ? 2 : 3,
                     repeat: Infinity,
                     ease: "easeInOut",
                     delay: index * 0.5
