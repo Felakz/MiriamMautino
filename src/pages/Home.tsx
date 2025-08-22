@@ -6,7 +6,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { FaWhatsapp, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import SocialLinks from "../components/SocialLinks";
 import SEOHead from "../components/SEOHead";
 import { trackWhatsAppClick } from "../components/GoogleAnalytics";
@@ -66,6 +66,7 @@ export default function Home() {
 	const [currentTestimonial, setCurrentTestimonial] = useState(0);
 	const [showModal, setShowModal] = useState(false);
 	const navigate = useNavigate();
+	const location = useLocation();
 
 	// Auto-cambio de testimonios cada 4 segundos
 	useEffect(() => {
@@ -120,8 +121,10 @@ export default function Home() {
 	};
 
 	useEffect(() => {
-		setShowModal(true);
-	}, []);
+		if (location.pathname === "/") {
+			setShowModal(true);
+		}
+	}, [location]);
 
 	return (
 		<div className="min-h-screen relative">
