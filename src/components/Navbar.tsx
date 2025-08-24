@@ -14,6 +14,7 @@ import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 const navLinks = [
   { name: "Inicio", path: "/" },
   { name: "Información del Producto", path: "/info-producto" },
+  { name: "Emprendimiento", path: "/emprendimiento" },
 ];
 
 const productLinks = [
