@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaRocket, FaDollarSign, FaCrown, FaUsers, FaChartLine, FaGift, FaTrophy, FaHandshake, FaHeart, FaFireAlt, FaLightbulb, FaShieldAlt, FaClock, FaBolt, FaMedal, FaStar, FaArrowRight, FaPlay } from "react-icons/fa";
+import { FaRocket, FaDollarSign, FaCrown, FaUsers, FaChartLine, FaGift, FaTrophy, FaHandshake, FaHeart, FaFireAlt, FaLightbulb, FaShieldAlt, FaStar, FaArrowRight, FaPlay } from "react-icons/fa";
 import SocialLinks from "../components/SocialLinks";
 
 const benefits = [
