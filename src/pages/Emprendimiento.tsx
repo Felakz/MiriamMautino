@@ -227,7 +227,7 @@ function Emprendimiento() {
             </motion.div>
           </div>
           <div className="flex justify-center">
-            <img src="src/assets/productos/epigenetica1.png" alt="Epigenética productos" className="w-full max-w-md rounded-xl shadow-lg object-cover" style={{maxHeight: 340}} />
+            <img src="/productos/epigenetica1.png" alt="Epigenética productos" className="max-w-full rounded-lg shadow-md" />
           </div>
         </div>
       </section>
